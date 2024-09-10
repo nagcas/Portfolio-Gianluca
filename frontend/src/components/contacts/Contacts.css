@@ -1,0 +1,16 @@
+.content__contacts {
+  height: auto;
+  margin-top: 60px;
+  border-radius: 25px;
+  padding: 20px;
+}
+
+.content__title__contacts {
+  height: auto;
+  border-radius: 25px;
+  color: #fff;
+  margin-bottom: 40px;
+  text-align: center;
+  font-size: 2rem;
+  padding: 10px;
+}

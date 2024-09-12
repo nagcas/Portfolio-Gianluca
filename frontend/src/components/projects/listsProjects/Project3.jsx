@@ -1,11 +1,19 @@
+import { useEffect } from "react";
 import { Col, Container, Image, Row } from "react-bootstrap";
 import EpicBooks from "../../../assets/project/epic-books-project.png";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function Project3() {
+
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
+
   return (
     <Container className="content__lists__projects">
       <Row className="content__projects">
-        <Col md={6}>
+        <Col data-aos="zoom-in-left" md={6}>
         <a
           href="https://github.com/nagcas/PFM-W4D4-EPIC-BOOKS-TESTS--15.06.2024"
           target="_blank"
@@ -15,7 +23,7 @@ function Project3() {
            <Image src={EpicBooks} alt="Strive Blog" className="projects" />
         </a>
         </Col>
-        <Col md={6}>
+        <Col data-aos="zoom-in-right" md={6}>
           <div>
             <p className="text-white fs-5">
               <span className="project__title">Epic Books</span>
@@ -34,13 +42,13 @@ function Project3() {
             </p>
 
             {/* Tags for SafeQuake Alert */}
-            <div class="tags">
+            <div className="tags">
               {/* Technology Tags */}
-              <span class="tag">
-                <i class="bi bi-bootstrap-fill"></i> Bootstrap 5
+              <span className="tag">
+                <i className="bi bi-bootstrap-fill"></i> Bootstrap 5
               </span>
-              <span class="tag">
-                <i class="bi bi-code-slash"></i> React.js
+              <span className="tag">
+                <i className="bi bi-code-slash"></i> React.js
               </span>
               <span className="tag tag-vite">
                 <i className="bi bi-code-slash"></i> Vite

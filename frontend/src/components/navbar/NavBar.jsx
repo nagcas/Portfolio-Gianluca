@@ -57,8 +57,9 @@ function NavBar() {
                 smooth={true}
                 duration={200}
                 spy={true}
-                onSetActive={() => setActiveLink("home")}
-                className={activeLink === "home" ? "mx-4 menu__navbar__link nav__menu active" : "mx-4 menu__navbar__link nav__menu"}
+                offset={-100}
+                onSetActive={() => setActiveLink("hero")}
+                className={activeLink === "hero" ? "mx-4 menu__navbar__link nav__menu active" : "mx-4 menu__navbar__link nav__menu"}
                 onClick={handleClose}
               >
                 Home
@@ -69,6 +70,7 @@ function NavBar() {
                 smooth={true}
                 duration={200}
                 spy={true}
+                offset={-100}
                 onSetActive={() => setActiveLink("projects")}
                 className={activeLink === "projects" ? "mx-4 menu__navbar__link nav__menu active" : "mx-4 menu__navbar__link nav__menu"}
                 onClick={handleClose}
@@ -81,6 +83,7 @@ function NavBar() {
                 smooth={true}
                 duration={200}
                 spy={true}
+                offset={-100}
                 onSetActive={() => setActiveLink("skills")}
                 className={activeLink === "skills" ? "mx-4 menu__navbar__link nav__menu active" : "mx-4 menu__navbar__link nav__menu"}
                 onClick={handleClose}
@@ -93,11 +96,12 @@ function NavBar() {
                 smooth={true}
                 duration={200}
                 spy={true}
+                offset={-100}
                 onSetActive={() => setActiveLink("about")}
                 className={activeLink === "about" ? "mx-4 menu__navbar__link nav__menu active" : "mx-4 menu__navbar__link nav__menu"}
                 onClick={handleClose}
               >
-                About
+                Chi sono
               </Link>
 
               <Link
@@ -105,6 +109,7 @@ function NavBar() {
                 smooth={true}
                 duration={200}
                 spy={true}
+                offset={-100}
                 onSetActive={() => setActiveLink("contacts")}
                 className={activeLink === "contacts" ? "mx-4 menu__navbar__link nav__menu active" : "mx-4 menu__navbar__link nav__menu"}
                 onClick={handleClose}

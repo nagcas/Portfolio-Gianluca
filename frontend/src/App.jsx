@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
-import Hero from "./components/hero/hero";
+import Hero from "./components/hero/Hero";
 import NavBar from "./components/navbar/NavBar";
 import Projects from "./components/projects/Projects";
 import Footer from "./components/footer/Footer";

@@ -1,11 +1,20 @@
 import { Col, Container, Image, Row } from "react-bootstrap";
 import SafeQuakeAlert from "../../../assets/project/safequake-alert-project.png";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 
 function Project1() {
+
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
+
   return (
     <Container className="content__lists__projects">
       <Row className="content__projects">
-        <Col md={6}>
+        <Col data-aos="zoom-in-left" md={6}>
         <a
           href="https://safe-quake-alert.vercel.app/"
           target="_blank"
@@ -18,7 +27,7 @@ function Project1() {
           />
         </a>  
         </Col>
-        <Col md={6}>
+        <Col data-aos="zoom-in-right" md={6}>
           <div>
             <p className="text-white fs-5">
               <span className="project__title">SafeQuake Alert</span>
@@ -36,42 +45,42 @@ function Project1() {
             </p>
 
             {/* Tags for SafeQuake Alert */}
-            <div class="tags">
+            <div className="tags">
               {/* Technology Tags */}
-              <span class="tag">
-                <i class="bi bi-bootstrap-fill"></i> Bootstrap 5
+              <span className="tag">
+                <i className="bi bi-bootstrap-fill"></i> Bootstrap 5
               </span>
-              <span class="tag">
-                <i class="bi bi-code-slash"></i> React.js
+              <span className="tag">
+                <i className="bi bi-code-slash"></i> React.js
               </span>
-              <span class="tag">
-                <i class="bi bi-node-plus-fill"></i> Node.js
+              <span className="tag">
+                <i className="bi bi-node-plus-fill"></i> Node.js
               </span>
-              <span class="tag">
-                <i class="bi bi-mongo"></i> MongoDB
+              <span className="tag">
+                <i className="bi bi-mongo"></i> MongoDB
               </span>
-              <span class="tag">
-                <i class="bi bi-cloud-fill"></i> Cloudinary
+              <span className="tag">
+                <i className="bi bi-cloud-fill"></i> Cloudinary
               </span>
-              <span class="tag">
-                <i class="bi bi-diagram-3-fill"></i> Socket.io
+              <span className="tag">
+                <i className="bi bi-diagram-3-fill"></i> Socket.io
               </span>
-              <span class="tag">
-                <i class="bi bi-database-fill"></i> Firebase
+              <span className="tag">
+                <i className="bi bi-database-fill"></i> Firebase
               </span>
-              <span class="tag">
-                <i class="bi bi-map-fill"></i> Leaflet.js
+              <span className="tag">
+                <i className="bi bi-map-fill"></i> Leaflet.js
               </span>
 
               {/* Functionality Tags */}
-              <span class="tag">
-                <i class="bi bi-bell-fill"></i> Real-time Alerts
+              <span className="tag">
+                <i className="bi bi-bell-fill"></i> Real-time Alerts
               </span>
-              <span class="tag">
-                <i class="bi bi-geo-fill"></i> Geolocation
+              <span className="tag">
+                <i className="bi bi-geo-fill"></i> Geolocation
               </span>
-              <span class="tag">
-                <i class="bi bi-globe"></i> Seismic Monitoring
+              <span className="tag">
+                <i className="bi bi-globe"></i> Seismic Monitoring
               </span>
             </div>
           </div>

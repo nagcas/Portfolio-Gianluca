@@ -12,30 +12,31 @@ function Footer() {
       <Container>
         <Row className="d-flex justify-content-center align-items-top">
           <Col md={3} className="text-center">
-            <Link to="hero" className="logo-link">
+            <Link to="hero" className="logo-link mt-4">
               <h5>
                 Gianluca
                 {" "}<Image src={Logo} alt="Logo" className="logo" />{" "}
                 Chiaravalloti
               </h5>
             </Link>
-            <p>breve descrizione</p>
+            <p>Da Geometra e Geologo a Web Developer Full Stack: <span className="fw-bold">Il Mio Percorso di Trasformazione</span></p>
           </Col>
           <Col md={3} className="text-center">
-            <Link to="contacts" className="contacts-link">
+            <Link to="contacts" className="contacts-link mt-4">
               <h5>Contatti</h5>
             </Link>
-            <p>Email: info@safequakealert.com</p>
+            <p>Email: studio.nagcas@outlook.it</p>
             <p>telefono: +39 351 8517108</p>
           </Col>
           <Col md={3} className="text-center">
-            <Link to="about" className="about-link">
-              <h5>About</h5>
+            <Link to="about" className="about-link mt-4">
+              <h5>Chi sono</h5>
             </Link>
+            <p>Ogni problema risolto è una sfida vinta</p>
           </Col>
           <Col md={3} className="text-center mb-3">
             <h5>Seguimi</h5>
-            <div className="social-icons">
+            <div className="social-icons mt-4">
               <a
                 href="https://github.com/nagcas"
                 target="_blank"

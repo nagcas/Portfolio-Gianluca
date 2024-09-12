@@ -21,14 +21,10 @@ function App() {
       <Skills />
       <About />
       <Contacts />
-      <Footer />
       <Routes>
-        <Route path="/" element={""} />
-        <Route path="/projects" element={""} />
-        <Route path="/skills" element={""} />
-        <Route path="/about" element={""} />
-        <Route path="/contacts" element={""} />
+        <Route path="*" element={""} />
       </Routes>
+      <Footer />
     </Router>
   );
 }

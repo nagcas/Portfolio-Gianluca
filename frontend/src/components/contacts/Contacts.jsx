@@ -17,9 +17,33 @@ import "aos/dist/aos.css";
 
 function Contacts() {
 
+  const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth >= 768);
+
   useEffect(() => {
-    AOS.init({ duration: 1000 });
-  }, []);
+    const handleResize = () => {
+      const isScreenLarge = window.innerWidth >= 768;
+      if (isScreenLarge !== isLargeScreen) {
+        setIsLargeScreen(isScreenLarge);
+      }
+    };
+
+    // Aggiungi l'evento di resize
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup: rimuovi il listener
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [isLargeScreen]);
+
+  useEffect(() => {
+    if (isLargeScreen) {
+      AOS.init({ duration: 1000 });
+    } else {
+      AOS.refreshHard(); // Pulisce completamente AOS
+      AOS.init({ disable: true }); // Disabilita AOS su dispositivi piccoli
+    }
+  }, [isLargeScreen]);
 
   const API_URL = "http://localhost:5001";
 
@@ -117,132 +141,150 @@ function Contacts() {
       <h2 className="d-flex justify-content-center align-items-center content__title__contacts">
         Contatti
       </h2>
-      <Form data-aos="fade-up" onSubmit={handleSaveSubmit} className="content__contacts">
-        <Row className="form__contact">
-          <Col md={6}>
-            <FloatingLabel
-              controlId="contact-name"
-              label={
-                errors.name ? (
-                  <span className="text-danger">{errors.name}</span>
-                ) : (
-                  "Inserisci il nome"
-                )
-              }
-              className="mb-3"
-            >
-              <Form.Control
-                type="text"
-                name="name"
-                aria-label="Inserisci il tuo nome"
-                placeholder="Inserisci il tuo nome"
-                value={formContact.name}
-                onChange={handleInputChange}
-                isInvalid={!!errors.name}
-              />
-            </FloatingLabel>
-          </Col>
-          <Col md={6}>
-            <FloatingLabel
-              controlId="contact-lastname"
-              label={
-                errors.lastname ? (
-                  <span className="text-danger">{errors.lastname}</span>
-                ) : (
-                  "Inserisci il cognome"
-                )
-              }
-              className="mb-3"
-            >
-              <Form.Control
-                type="text"
-                name="lastname"
-                aria-label="Inserisci il tuo cognome"
-                placeholder="inserisci il tuo cognome"
-                value={formContact.lastname}
-                onChange={handleInputChange}
-                isInvalid={!!errors.lastname}
-              />
-            </FloatingLabel>
-          </Col>
-          <Col md={12}>
-            <FloatingLabel
-              controlId="contact-email"
-              label={
-                errors.email ? (
-                  <span className="text-danger">{errors.email}</span>
-                ) : (
-                  "Inserisci una email"
-                )
-              }
-              className="mb-3"
-            >
-              <Form.Control
-                type="email"
-                name="email"
-                aria-label="Inserisci la tua email"
-                placeholder="Inserisci la tua email"
-                value={formContact.email}
-                onChange={handleInputChange}
-                isInvalid={!!errors.email}
-              />
-            </FloatingLabel>
-          </Col>
-          <Col md={12}>
-            <FloatingLabel
-              controlId="contact-message"
-              label={
-                errors.message ? (
-                  <span className="text-danger">{errors.message}</span>
-                ) : (
-                  "Inserisci il messaggio"
-                )
-              }
-            >
-              <Form.Control
-                className="mb-3"
-                as="textarea"
-                placeholder="Inserisci il tuo messaggio"
-                aria-label="Inserisci il tuo messaggio"
-                style={{ height: "200px" }}
-                name="message"
-                value={formContact.message}
-                onChange={handleInputChange}
-                isInvalid={!!errors.message}
-              />
-            </FloatingLabel>
-          </Col>
-          <Col md={12}>
-            <Button
-              type="submit"
-              className="btn__send__form w-100"
-              aria-label=""
-              disabled={loading}
-            >
-              {loading ? (
-                <Spinner
-                  as="span"
-                  animation="border"
-                  size="sm"
-                  role="status"
-                  aria-hidden="true"
-                />
-              ) : (
-                "Invia messaggio"
-              )}
-            </Button>
-            {message && (
-              <Alert
-                variant={message.type}
-                className="m-3 text-center"
-                aria-live="assertive"
-              >
-                {message.text}
-              </Alert>
-            )}
-          </Col>
-        </Row>
-      </Form>
+      <Row className="d-flex justify-content-between align-items-center">
+        <Col data-aos="fade-up" sm={12} md={12} lg={4}>
+          <div className="d-flex flex-column justify-content-center align-items-center mt-4">
+            <i className="bi bi-envelope-at-fill icons__email"></i>
+            <p className="mt-3 fs-4">
+              Dott. Gianluca Chiaravalloti
+            </p>
+            <p className="fs-4">
+              Cell. +39 351 8517108
+            </p>
+            <p className="fs-4">
+              email: <span className="fw-bold">studio.nagcas@outlook.it</span>
+            </p>
+          </div>
+        </Col>
+        <Col data-aos="fade-up" sm={12} md={12} lg={8}>
+          <Form onSubmit={handleSaveSubmit} className="content__contacts">
+            <Row className="form__contact">
+              <Col md={6}>
+                <FloatingLabel
+                  controlId="contact-name"
+                  label={
+                    errors.name ? (
+                      <span className="text-danger">{errors.name}</span>
+                    ) : (
+                      "Inserisci il nome"
+                    )
+                  }
+                  className="mb-3"
+                >
+                  <Form.Control
+                    type="text"
+                    name="name"
+                    aria-label="Inserisci il tuo nome"
+                    placeholder="Inserisci il tuo nome"
+                    value={formContact.name}
+                    onChange={handleInputChange}
+                    isInvalid={!!errors.name}
+                  />
+                </FloatingLabel>
+              </Col>
+              <Col md={6}>
+                <FloatingLabel
+                  controlId="contact-lastname"
+                  label={
+                    errors.lastname ? (
+                      <span className="text-danger">{errors.lastname}</span>
+                    ) : (
+                      "Inserisci il cognome"
+                    )
+                  }
+                  className="mb-3"
+                >
+                  <Form.Control
+                    type="text"
+                    name="lastname"
+                    aria-label="Inserisci il tuo cognome"
+                    placeholder="inserisci il tuo cognome"
+                    value={formContact.lastname}
+                    onChange={handleInputChange}
+                    isInvalid={!!errors.lastname}
+                  />
+                </FloatingLabel>
+              </Col>
+              <Col md={12}>
+                <FloatingLabel
+                  controlId="contact-email"
+                  label={
+                    errors.email ? (
+                      <span className="text-danger">{errors.email}</span>
+                    ) : (
+                      "Inserisci una email"
+                    )
+                  }
+                  className="mb-3"
+                >
+                  <Form.Control
+                    type="email"
+                    name="email"
+                    aria-label="Inserisci la tua email"
+                    placeholder="Inserisci la tua email"
+                    value={formContact.email}
+                    onChange={handleInputChange}
+                    isInvalid={!!errors.email}
+                  />
+                </FloatingLabel>
+              </Col>
+              <Col md={12}>
+                <FloatingLabel
+                  controlId="contact-message"
+                  label={
+                    errors.message ? (
+                      <span className="text-danger">{errors.message}</span>
+                    ) : (
+                      "Inserisci il messaggio"
+                    )
+                  }
+                >
+                  <Form.Control
+                    className="mb-3"
+                    as="textarea"
+                    placeholder="Inserisci il tuo messaggio"
+                    aria-label="Inserisci il tuo messaggio"
+                    style={{ height: "200px" }}
+                    name="message"
+                    value={formContact.message}
+                    onChange={handleInputChange}
+                    isInvalid={!!errors.message}
+                  />
+                </FloatingLabel>
+              </Col>
+              <Col md={12}>
+                <Button
+                  type="submit"
+                  className="btn__send__form w-100"
+                  aria-label=""
+                  disabled={loading}
+                >
+                  {loading ? (
+                    <Spinner
+                      as="span"
+                      animation="border"
+                      size="sm"
+                      role="status"
+                      aria-hidden="true"
+                    />
+                  ) : (
+                    "Invia messaggio"
+                  )}
+                </Button>
+                {message && (
+                  <Alert
+                    variant={message.type}
+                    className="m-3 text-center"
+                    aria-live="assertive"
+                  >
+                    {message.text}
+                  </Alert>
+                )}
+              </Col>
+            </Row>
+          </Form>
+        </Col>
+      </Row>
     </Container>
   );
 }

@@ -1,13 +1,38 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import "./Skills.css";
 
 function Skills() {
+
+  const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth >= 768);
+
   useEffect(() => {
-    AOS.init({ duration: 1000 });
-  }, []);
+    const handleResize = () => {
+      const isScreenLarge = window.innerWidth >= 768;
+      if (isScreenLarge !== isLargeScreen) {
+        setIsLargeScreen(isScreenLarge);
+      }
+    };
+
+    // Aggiungi l'evento di resize
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup: rimuovi il listener
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [isLargeScreen]);
+
+  useEffect(() => {
+    if (isLargeScreen) {
+      AOS.init({ duration: 1000 });
+    } else {
+      AOS.refreshHard(); // Pulisce completamente AOS
+      AOS.init({ disable: true }); // Disabilita AOS su dispositivi piccoli
+    }
+  }, [isLargeScreen]);
 
   const skills = [
     {

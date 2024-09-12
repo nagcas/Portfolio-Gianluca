@@ -8,6 +8,44 @@ dotenv.config();
 
 const router = express.Router();
 
+const API_KEY = process.env.API_KEY;
+
+
+// Definizione di una rotta GET per ottenere una lista dei messaggi con paginazione e ordinamento
+router.get('/', async (req, res) => {
+  const apiKey = req.headers['x-api-key'];
+
+  if (apiKey !== API_KEY) {
+    return res.status(403).json({ message: 'Accesso proibito: API key non valida' });
+  }
+
+  try {
+    const page = parseInt(req.query.page) || 1;
+    const limit = parseInt(req.query.limit) || 16;
+    const sort = req.query.sort || 'name';
+    const sortDirection = req.query.sortDirection === 'desc' ? -1 : 1;
+    const skip = (page - 1) * limit;
+
+    const contacts = await ContactPortfolio.find({})
+      .sort({ [sort]: sortDirection })
+      .skip(skip)
+      .limit(limit);
+
+    const total = await ContactPortfolio.countDocuments();
+
+    res.json({
+      contacts,
+      currentPage: page,
+      totalPages: Math.ceil(total / limit),
+      totalContacts: total
+    });
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  };
+});
+
+
+// Definizione di una rotta POST per ricevere un messaggio di contatto dalla pagina portfolio
 router.post("/", async (req, res) => {
   try {
     const newContactData = req.body;
@@ -68,6 +106,27 @@ router.post("/", async (req, res) => {
         message: "Errore del server, impossibile processare la richiesta!",
       });
   }
+});
+
+
+// Definizione di una route DELETE per eliminare un messaggio di un utente
+router.delete('/:contactId', async (req, res) => {
+  const apiKey = req.headers['x-api-key'];
+
+  if (apiKey !== API_KEY) {
+    return res.status(403).json({ message: 'Accesso proibito: API key non valida' });
+  }
+
+  try {
+    const deleteContact = await ContactPortfolio.findByIdAndDelete(req.params.contactId);
+    if (!deleteContact) {
+      return res.status(404).json({ message: 'Contatto non presente nel database!' });
+    };
+
+    res.json({ message: 'Messaggio eliminato con successo!' });
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  };
 });
 
 export default router;

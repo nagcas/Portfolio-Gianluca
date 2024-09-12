@@ -11,7 +11,7 @@
   height: auto;
   border-radius: 25px;
   color: #fff;
-  margin: 100px 0 60px 0;
+  margin: 60px 0 60px 0;
   text-align: center;
   font-size: 2rem;
   background-color: #3e49543a;
@@ -46,5 +46,9 @@
   background-color: #ffffff26;
   color: #fff;
   border: 0;
+}
+
+.icons__email {
+  font-size: 8rem;
 }
 

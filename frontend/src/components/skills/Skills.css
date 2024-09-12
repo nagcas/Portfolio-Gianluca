@@ -9,7 +9,7 @@
   height: auto;
   border-radius: 25px;
   color: #fff;
-  margin: 100px 0 100px 0;
+  margin: 60px 0 100px 0;
   text-align: center;
   font-size: 2rem;
   background-color: #3e49543a;
@@ -64,7 +64,6 @@
 
 .skills:hover .fill {
   background-color: #3e4954c9;
-  /* background-color: #66bb6a; */
 }
 
 .skills p {

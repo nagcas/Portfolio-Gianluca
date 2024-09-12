@@ -1,20 +1,49 @@
+import { useEffect, useState } from "react";
 import { Col, Container, Image, Row } from "react-bootstrap";
 import SafeQuakeAlert from "../../../assets/project/safequake-alert-project.png";
-import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
 
 function Project1() {
 
+  const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth >= 768);
+
   useEffect(() => {
-    AOS.init({ duration: 1000 });
-  }, []);
+    const handleResize = () => {
+      const isScreenLarge = window.innerWidth >= 768;
+      if (isScreenLarge !== isLargeScreen) {
+        setIsLargeScreen(isScreenLarge);
+      }
+    };
+
+    // Aggiungi l'evento di resize
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup: rimuovi il listener
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [isLargeScreen]);
+
+  useEffect(() => {
+    if (isLargeScreen) {
+      AOS.init({ duration: 1000 });
+    } else {
+      AOS.refreshHard(); // Pulisce completamente AOS
+      AOS.init({ disable: true }); // Disabilita AOS su dispositivi piccoli
+    }
+  }, [isLargeScreen]);
 
   return (
     <Container className="content__lists__projects">
       <Row className="content__projects">
-        <Col data-aos="zoom-in-left" md={6}>
+        <Col 
+          data-aos="zoom-in-left" 
+          sm={12}
+          md={12}
+          lg={6}
+        >
         <a
           href="https://safe-quake-alert.vercel.app/"
           target="_blank"
@@ -27,7 +56,12 @@ function Project1() {
           />
         </a>  
         </Col>
-        <Col data-aos="zoom-in-right" md={6}>
+        <Col 
+          data-aos="zoom-in-right" 
+          sm={12}
+          md={12}
+          lg={6}
+        >
           <div>
             <p className="text-white fs-5">
               <span className="project__title">SafeQuake Alert</span>

@@ -7,6 +7,7 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 import contactsRoutes from "./routes/contactsRoute.js";
 import cors from "cors";
+import { badRequestHandler, genericErrorHandler, notFoundHandler } from "./middlewares/errorHandlers.js";
 
 // Carica le variabili d'ambiente
 dotenv.config();
@@ -32,6 +33,11 @@ const PORT = process.env.PORT || 5000;
 
 // Usa le rotte per gli utenti
 app.use("/api/contacts-portfolio", contactsRoutes);
+
+// Error handling middleware
+app.use(badRequestHandler);
+app.use(notFoundHandler);
+app.use(genericErrorHandler);
 
 // Avvio del server
 app.listen(PORT, () => {

@@ -1,0 +1,43 @@
+.btn__privacy {
+  color: #fff;
+  border: 1px solid #fff;
+}
+
+.btn__privacy:hover {
+  background-color: #3e49545b;
+  border: 1px solid #fff;
+  color: #fff;
+}
+
+.offcanvas-bottom {
+  height: 200%; 
+  top: auto;
+  bottom: 0;
+  transform: translateY(100%);
+  opacity: 0;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.offcanvas-bottom.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.offcanvas-bottom .offcanvas-body {
+  overflow-y: auto; 
+}
+
+.content__privacy {
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  color: #fff;
+  padding: 100px;
+}
+
+/* Smartphone - Offcanvas */
+@media (max-width: 991px) {
+  .content__privacy {
+    padding: 20px;
+
+  }
+}

@@ -3,6 +3,7 @@ import "./Footer.css";
 import { Col, Container, Image, Row } from "react-bootstrap";
 import { Link } from "react-scroll";
 import Logo from "../../assets/logo/logo.png";
+import PrivacyPolicy from "../policy/PrivacyPolicy";
 
 function Footer() {
   const currentYear = new Date().getFullYear();
@@ -59,6 +60,9 @@ function Footer() {
           <Col className="text-center my-4">
             <p>{currentYear} Portfolio</p>
             <p>by Dott. Gianluca Chiaravalloti</p>
+          </Col>
+          <Col className="text-center my-4">
+            <PrivacyPolicy />
           </Col>
         </Row>
       </Container>

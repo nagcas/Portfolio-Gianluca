@@ -1,10 +1,14 @@
-import React, { useEffect, useState } from "react";
-import { Col, Container, Row } from "react-bootstrap";
-import AOS from "aos";
-import "aos/dist/aos.css";
 import "./Skills.css";
 
+import React, { useEffect, useState } from "react";
+import { Col, Container, Row } from "react-bootstrap";
+import { useTranslation } from 'react-i18next';
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 function Skills() {
+
+  const { t  } = useTranslation('global');
 
   const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth >= 768);
 
@@ -100,7 +104,7 @@ function Skills() {
   return (
     <Container id="skills" className="content__skills">
       <h2 className="d-flex justify-content-center align-items-center content__title__skills">
-        Skills
+        {t("skills.skills")}
       </h2>
       <Row className="d-flex justify-content-center align-items-center gap-4">
         {skills.map((skill, index) => (

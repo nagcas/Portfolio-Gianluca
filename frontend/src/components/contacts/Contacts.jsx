@@ -12,10 +12,13 @@ import {
   Row,
   Spinner,
 } from "react-bootstrap";
+import { useTranslation } from 'react-i18next';
 import AOS from "aos";
 import "aos/dist/aos.css";
 
 function Contacts() {
+
+  const { t  } = useTranslation('global');
 
   const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth >= 768);
 
@@ -71,16 +74,16 @@ function Contacts() {
   const validate = () => {
     const newErrors = {};
     if (!formContact.name.trim()) {
-      newErrors.name = "Devi inserire il tuo nome";
+      newErrors.name = t("contacts.devi-inserire-il-tuo-nome");
     }
     if (!formContact.lastname.trim()) {
-      newErrors.lastname = "Devi inserire il tuo cognome";
+      newErrors.lastname = t("contacts.devi-inserire-il-tuo-cognome");
     }
     if (!formContact.email.trim()) {
-      newErrors.email = "Devi inserire la tua email";
+      newErrors.email = t("contacts.devi-inserire-la-tua-email");
     }
     if (!formContact.message.trim()) {
-      newErrors.message = "Devi inserire il tuo messaggio";
+      newErrors.message = t("contacts.devi-inserire-il-tuo-messaggio");
     }
 
     return newErrors;
@@ -111,12 +114,12 @@ function Contacts() {
         const errorData = await response.json();
         console.error("Error from server:", errorData);
         setErrors({
-          message: errorData.message || "Errore nell'invio dei dati",
+          message: errorData.message || t("contacts.errore-nell'invio-dei-dati"),
         });
         return;
       };
 
-      setMessage({ type: "success", text: "Messaggio inviato correttamente" }); // Mostra un messaggio di successo
+      setMessage({ type: "success", text: t("Messaggio inviato correttamente") }); // Mostra un messaggio di successo
 
       // Reset del modulo dopo il successo
       setTimeout(() => {
@@ -130,7 +133,7 @@ function Contacts() {
       }, 1500);
     } catch (error) {
       console.error("contact:", error.message);
-      setErrors({ email: "Errore nell'invio della email" }); // Mostra un errore specifico per l'email
+      setErrors({ email: t("contacts.errore-nell'invio della email") }); // Mostra un errore specifico per l'email
     } finally {
       setLoading(false); // Nasconde lo spinner di caricamento
     }
@@ -139,20 +142,20 @@ function Contacts() {
   return (
     <Container id="contacts">
       <h2 className="d-flex justify-content-center align-items-center content__title__contacts">
-        Contatti
+        {t("contacts.contatti")}
       </h2>
       <Row className="d-flex justify-content-between align-items-center">
         <Col data-aos="fade-up" sm={12} md={12} lg={4}>
           <div className="d-flex flex-column justify-content-center align-items-center mt-4">
             <i className="bi bi-envelope-at-fill icons__email"></i>
             <p className="mt-3 fs-4">
-              Dott. Gianluca Chiaravalloti
+              {t("contacts.gianluca")}
             </p>
             <p className="fs-4">
-              Cell. +39 351 8517108
+            {t("contacts.cell")} +39 351 8517108
             </p>
             <p className="fs-4">
-              email: <span className="fw-bold">studio.nagcas@outlook.it</span>
+            {t("contacts.email")} <span className="fw-bold">studio.nagcas@outlook.it</span>
             </p>
           </div>
         </Col>
@@ -166,7 +169,7 @@ function Contacts() {
                     errors.name ? (
                       <span className="text-danger">{errors.name}</span>
                     ) : (
-                      "Inserisci il nome"
+                      t("contacts.inserisci-il-tuo-nome")
                     )
                   }
                   className="mb-3"
@@ -174,8 +177,8 @@ function Contacts() {
                   <Form.Control
                     type="text"
                     name="name"
-                    aria-label="Inserisci il tuo nome"
-                    placeholder="Inserisci il tuo nome"
+                    aria-label={t("contacts.inserisci-il-tuo-nome")}
+                    placeholder={t("contacts.inserisci-il-tuo-nome")}
                     value={formContact.name}
                     onChange={handleInputChange}
                     isInvalid={!!errors.name}
@@ -189,7 +192,7 @@ function Contacts() {
                     errors.lastname ? (
                       <span className="text-danger">{errors.lastname}</span>
                     ) : (
-                      "Inserisci il cognome"
+                      t("contacts.inserisci-il-tuo-cognome")
                     )
                   }
                   className="mb-3"
@@ -197,8 +200,8 @@ function Contacts() {
                   <Form.Control
                     type="text"
                     name="lastname"
-                    aria-label="Inserisci il tuo cognome"
-                    placeholder="inserisci il tuo cognome"
+                    aria-label={t("contacts.inserisci-il-tuo-cognome")}
+                    placeholder={t("contacts.inserisci-il-tuo-cognome")}
                     value={formContact.lastname}
                     onChange={handleInputChange}
                     isInvalid={!!errors.lastname}
@@ -212,7 +215,7 @@ function Contacts() {
                     errors.email ? (
                       <span className="text-danger">{errors.email}</span>
                     ) : (
-                      "Inserisci una email"
+                      t("contacts.inserisci-la-tua-email")
                     )
                   }
                   className="mb-3"
@@ -220,8 +223,8 @@ function Contacts() {
                   <Form.Control
                     type="email"
                     name="email"
-                    aria-label="Inserisci la tua email"
-                    placeholder="Inserisci la tua email"
+                    aria-label={t("contacts.inserisci-la-tua-email")}
+                    placeholder={t("contacts.inserisci-la-tua-email")}
                     value={formContact.email}
                     onChange={handleInputChange}
                     isInvalid={!!errors.email}
@@ -235,15 +238,15 @@ function Contacts() {
                     errors.message ? (
                       <span className="text-danger">{errors.message}</span>
                     ) : (
-                      "Inserisci il messaggio"
+                      t("contacts.inserisci-il-tuo-messaggio")
                     )
                   }
                 >
                   <Form.Control
                     className="mb-3"
                     as="textarea"
-                    placeholder="Inserisci il tuo messaggio"
-                    aria-label="Inserisci il tuo messaggio"
+                    placeholder={t("contacts.inserisci-il-tuo-messaggio")}
+                    aria-label={t("contacts.inserisci-il-tuo-messaggio")}
                     style={{ height: "200px" }}
                     name="message"
                     value={formContact.message}
@@ -255,8 +258,9 @@ function Contacts() {
               <Col md={12}>
                 <Button
                   type="submit"
+                  variant="outline-light"
                   className="btn__send__form w-100"
-                  aria-label=""
+                  aria-label={t("contacts.inserisci-il-tuo-messaggio")}
                   disabled={loading}
                 >
                   {loading ? (
@@ -268,7 +272,7 @@ function Contacts() {
                       aria-hidden="true"
                     />
                   ) : (
-                    "Invia messaggio"
+                    t("contacts.invia-messaggio")
                   )}
                 </Button>
                 {message && (

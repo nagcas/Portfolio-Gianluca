@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
 import { Col, Container, Image, Row } from "react-bootstrap";
 import EpicBooks from "../../../assets/project/epic-books-project.png";
+import { useTranslation } from 'react-i18next';
 import AOS from "aos";
 import "aos/dist/aos.css";
 
 function Project3() {
+
+  const { t  } = useTranslation('global');
 
   const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth >= 768);
 
@@ -63,16 +66,12 @@ function Project3() {
               <span className="project__title">Epic Books</span>
             </p>
             <p className="text-white fs-5">
-              è un'applicazione web sviluppata con
+              {t("project3.text-1")}
               <span className="fw-bold"> React</span>
             </p>
             <p className="text-white fs-5">
-              Il progetto <span className="fw-bold">"EPIC Books"</span> è un'applicazione web sviluppata con
-              React e Bootstrap-react utilizzando "Vite", progettata per gestire
-              la visualizzazione dei books e i commenti. Gli utenti possono
-              visualizzare, aggiungere, aggiornare ed eliminare commenti sui
-              libri. L'applicazione utilizza diverse librerie per gestire il
-              frontend e le richieste HTTP.
+              {t("project3.text-2")} <span className="fw-bold">"EPIC Books"</span> {t("project3.text-3")}
+              {t("project3.text-4")}
             </p>
 
             {/* Tags for SafeQuake Alert */}
@@ -93,7 +92,7 @@ function Project3() {
             </div>
           </div>
           <p className="text-white mt-4">
-            Scopri di più sul mio progetto visitando la pagina GitHub{" "}
+          {t("project3.text-5")} {" "}
             <a
               href="https://github.com/nagcas/PFM-W4D4-EPIC-BOOKS-TESTS--15.06.2024"
               target="_blank"

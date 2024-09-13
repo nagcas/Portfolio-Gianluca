@@ -1,11 +1,14 @@
 import { useEffect, useState } from "react";
 import { Col, Container, Image, Row } from "react-bootstrap";
 import SafeQuakeAlert from "../../../assets/project/safequake-alert-project.png";
+import { useTranslation } from 'react-i18next';
 import AOS from "aos";
 import "aos/dist/aos.css";
 
 
 function Project1() {
+
+  const { t  } = useTranslation('global');
 
   const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth >= 768);
 
@@ -67,15 +70,11 @@ function Project1() {
               <span className="project__title">SafeQuake Alert</span>
             </p>
             <p className="text-white fs-5">
-              è un'applicazione web avanzata sviluppata con
+              {t("project1.text-1")}
               <span className="fw-bold"> React</span> e <span className="fw-bold">Node.js</span>.
             </p>
             <p className="text-white fs-5">
-              Progettata per fornire allerte in tempo reale
-              riguardo ai terremoti e offrire consigli su come comportarsi
-              durante tali eventi. Il sistema mira a migliorare la sicurezza
-              pubblica attraverso notifiche tempestive, informazioni educative e
-              news aggiornate.
+              {t("project1.text-2")}
             </p>
 
             {/* Tags for SafeQuake Alert */}
@@ -119,7 +118,7 @@ function Project1() {
             </div>
           </div>
           <p className="text-white mt-4">
-            Scopri di più sul mio progetto visitando la pagina {' '}
+          {t("project1.text-3")} {' '}
             <a
               href="https://safe-quake-alert.vercel.app/"
               target="_blank"

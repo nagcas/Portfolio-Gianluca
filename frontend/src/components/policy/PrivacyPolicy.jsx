@@ -2,10 +2,14 @@ import "./PrivacyPolicy.css";
 
 import { useEffect, useState } from "react";
 import { Button, Offcanvas } from "react-bootstrap";
+import { useTranslation } from 'react-i18next';
 import AOS from "aos";
 import "aos/dist/aos.css";
 
 function PrivacyPolicy() {
+
+  const { t  } = useTranslation('global');
+
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -62,87 +66,75 @@ function PrivacyPolicy() {
         </Offcanvas.Header>
         <Offcanvas.Body>
           <header>
-            <p>Data di entrata in vigore: 13/09/2024</p>
+            <p>{t("privacy.header")} 13/09/2024</p>
           </header>
 
           <section>
-            <h2>1. Introduzione</h2>
+            <h2>{t("privacy.section-1")}</h2>
             <p>
-              Questa Privacy Policy descrive come raccogliamo, utilizziamo e
-              proteggiamo le informazioni personali degli utenti del sito{" "}
+            {t("privacy.section-2")}{" "}
               <span className="fw-bold">[https://tuo-sito.com](https://tuo-sito.com)</span>.
             </p>
           </section>
 
           <section>
-            <h2>2. Informazioni che raccogliamo</h2>
-            <h3>Informazioni fornite volontariamente</h3>
+            <h2>{t("privacy.section-3")}</h2>
+            <h3>{t("privacy.section-4")}</h3>
             <p>
-              Quando utilizzi il modulo di contatto, raccogliamo informazioni
-              come:
+              {t("privacy.section-5")}
             </p>
             <ul>
-              <li>Nome</li>
-              <li>Cognome</li>
-              <li>Indirizzo email</li>
-              <li>Messaggio inviato</li>
+              <li>{t("privacy.nome")}</li>
+              <li>{t("privacy.cognome")}</li>
+              <li>{t("privacy.email")}</li>
+              <li>{t("privacy.messaggio")}</li>
             </ul>
 
-            <h3>Dati di navigazione</h3>
+            <h3>{t("privacy.section-6")}</h3>
             <p>
-              Raccogliamo automaticamente informazioni come l'indirizzo IP, il
-              tipo di browser e le pagine visitate tramite cookie e tecnologie
-              simili.
+            {t("privacy.section-7")}
             </p>
           </section>
 
           <section>
-            <h2>3. Utilizzo delle informazioni</h2>
+            <h2>{t("privacy.section-8")}</h2>
             <p>
-              Le informazioni raccolte sono utilizzate per rispondere alle
-              richieste degli utenti e migliorare l'esperienza di navigazione
-              del sito.
+            {t("privacy.section-9")}
             </p>
           </section>
 
           <section>
-            <h2>4. Condivisione delle informazioni</h2>
+            <h2>{t("privacy.section-10")}</h2>
             <p>
-              Non vendiamo o condividiamo le tue informazioni personali con
-              terze parti, salvo obblighi legali.
+            {t("privacy.section-11")}
             </p>
           </section>
 
           <section>
-            <h2>5. Sicurezza delle informazioni</h2>
+            <h2>{t("privacy.section-12")}</h2>
             <p>
-              Adottiamo misure di sicurezza per proteggere le tue informazioni
-              personali. Tuttavia, nessun sistema online è sicuro al 100%.
+            {t("privacy.section-13")}
             </p>
           </section>
 
           <section>
-            <h2>6. Diritti degli utenti</h2>
+            <h2>{t("privacy.section-14")}</h2>
             <p>
-              Hai il diritto di accedere, rettificare o cancellare i tuoi dati
-              personali, così come altri diritti ai sensi del GDPR.
+            {t("privacy.section-15")}
             </p>
           </section>
 
           <section>
-            <h2>7. Modifiche alla Privacy Policy</h2>
+            <h2>{t("privacy.section-16")}</h2>
             <p>
-              Ci riserviamo il diritto di modificare questa Privacy Policy in
-              qualsiasi momento. Le modifiche saranno pubblicate su questa
-              pagina.
+            {t("privacy.section-17")}
             </p>
           </section>
 
           <section>
-            <h2>8. Contatti</h2>
+            <h2>{t("privacy.section-18")}</h2>
             <p>
-              Per qualsiasi domanda riguardo alla Privacy Policy, puoi
-              contattarci all'indirizzo{" "}
+            {t("privacy.section-19")}{" "}
               <a href="mailto:studio.nagcas@outlook.it">studio.nagcas@outlook.it</a>.
             </p>
           </section>
@@ -152,32 +144,25 @@ function PrivacyPolicy() {
           <section>
             <h2>Cookie Policy</h2>
             <p>
-              Utilizziamo cookie per migliorare la tua esperienza di
-              navigazione. I cookie sono piccoli file di testo che vengono
-              memorizzati sul tuo dispositivo.
+              {t("privacy.section-20")}
             </p>
 
-            <h3>Tipologie di cookie utilizzati</h3>
+            <h3>{t("privacy.section-21")}</h3>
             <ul>
               <li>
-                <span className="fw-bold">Cookie tecnici:</span> Essenziali per il corretto
-                funzionamento del sito.
+                <span className="fw-bold">{t("privacy.section-22")}</span> {t("privacy.section-23")}
               </li>
               <li>
-                <span className="fw-bold">Cookie analitici:</span> Utilizzati per raccogliere
-                dati anonimi sulle modalità di utilizzo del sito.
+                <span className="fw-bold">{t("privacy.section-24")}</span> {t("privacy.section-25")}
               </li>
               <li>
-                <span className="fw-dolc">Cookie di terze parti:</span> Potrebbero essere
-                impostati da strumenti di terze parti, come i pulsanti di
-                condivisione social.
+                <span className="fw-dolc">{t("privacy.section-26")}</span> {t("privacy.section-27")}
               </li>
             </ul>
 
-            <h3>Gestione dei cookie</h3>
+            <h3>{t("privacy.section-28")}</h3>
             <p>
-              Puoi gestire i cookie direttamente dal tuo browser. Ecco alcuni
-              link utili per modificare le impostazioni dei cookie:
+            {t("privacy.section-29")}
             </p>
             <ul>
               <li>

@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
 import { Col, Container, Image, Row } from "react-bootstrap";
 import StriveBlog from "../../../assets/project/strive-blog-project.png";
+import { useTranslation } from 'react-i18next';
 import AOS from "aos";
 import "aos/dist/aos.css";
 
 function Project2() {
+
+  const { t  } = useTranslation('global');
 
   const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth >= 768);
 
@@ -66,19 +69,12 @@ function Project2() {
               <span className="project__title">Strive Blog</span>
             </p>
             <p className="text-white fs-5">
-              è un'applicazione web sviluppata con
+              {t("project2.text-1")}
               <span className="fw-bold"> React</span> e{" "}
               <span className="fw-bold">Node.js</span>.
             </p>
             <p className="text-white fs-5">
-              Questa app è costruita con il potente stack MERN <span className="fw-bold">(MongoDB,
-              Express.js, React, Node.js)</span>. Gli utenti possono registrarsi,
-              accedere e creare post sul blog, oppure utilizzare direttamente
-              Google o GitHub per accedere. Una volta iscritti, ricevono
-              un'email di conferma automatica tramite Mailgun. Ogni utente può
-              gestire i propri post, profilo e commentare quelli degli altri,
-              oltre a esplorare l'elenco di autori. Il tutto è sviluppato con
-              create-react-app di npm!
+              {t("project2.text-2")} <span className="fw-bold">{t("project2.text-3")}</span>. {t("project2.text-4")}
             </p>
 
             {/* Tags for SafeQuake Alert */}
@@ -105,7 +101,7 @@ function Project2() {
             </div>
           </div>
           <p className="text-white mt-4">
-            Scopri di più sul mio progetto visitando la pagina {' '}
+          {t("project2.text-5")} {' '}
             <a
               href="https://strive-blog-kappa.vercel.app/"
               target="_blank"

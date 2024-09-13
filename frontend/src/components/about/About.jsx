@@ -2,11 +2,14 @@ import "./About.css";
 
 import { useEffect, useState } from "react";
 import { Col, Container, Image, Row } from "react-bootstrap";
-import Gianluca from "../../assets/images/gianluca.png";
+import Gianluca from "../../assets/profile/_gianluca.png";
+import { useTranslation } from 'react-i18next';
 import AOS from "aos";
 import "aos/dist/aos.css";
 
 function About() {
+
+  const { t  } = useTranslation('global');
 
   const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth >= 768);
 
@@ -39,43 +42,32 @@ function About() {
   return (
     <Container id="about" className="content__about">
       <h2 className="d-flex justify-content-center align-items-center content__title__about">
-        Chi sono
+        {t("about.chi-sono")}
       </h2>
       <Row className="d-flex justify-content-between align-items-center">
         <Col data-aos="zoom-out-left" sm={12} md={12} lg={8}>
           <h4>
-            Da Geometra e Geologo a Web Developer Full Stack: Il Mio Percorso di
-            Trasformazione
+            {t("about.text-1")}
           </h4>
 
           <p className="about__text">
-            La mia carriera è iniziata con una solida formazione tecnica come
-            geometra, dove ho affinato precisione, problem-solving e attenzione
-            ai dettagli. Successivamente, ho conseguito una laurea in Scienze
-            Geologiche, che mi ha permesso di ampliare la mia conoscenza del
-            territorio e della sua conformazione. Ho lavorato per anni nel
-            settore edile e come perito bancario, occupandomi di valutazioni
-            immobiliari. Tuttavia, sentivo il bisogno di esplorare nuove sfide.
+          {t("about.text-2")}
           </p>
 
           <p className="about__text">
-            La mia passione per la tecnologia, nata con il <span className="fw-bold">Commodore 64</span>, mi ha
-            spinto verso il mondo dello sviluppo web. Dopo aver frequentato il
-            <span className="fw-bold">bootcamp Epicode</span>, ho imparato a padroneggiare tecnologie come
-            React.js e MongoDB, creando progetti come SafeQuake Alert, una
-            piattaforma per il monitoraggio sismico in tempo reale.
+            {t("about.text-3")} <span className="fw-bold">{t("about.text-4")}</span>, 
+            {t("about.text-5")}
+            <span className="fw-bold">{t("about.text-6")}</span>, {t("about.text-7")}
+             <span className="fw-bold">{t("about.text-8")}</span>, 
+            {t("about.text-9")}
           </p>
 
           <p className="about__text">
-            Oggi, unisco l'approccio metodico e analitico sviluppato nella mia
-            carriera precedente alla creatività del presente, lavorando con
-            passione per costruire soluzioni innovative e all'avanguardia.
-            Reinventarsi è possibile: tutto parte da una solida base e dal
-            desiderio di crescere continuamente.
+            {t("about.text-10")}
           </p>
 
           <p className="about__text float-end">
-            Happy, coding
+            {t("about.text-11")}
           </p>
         </Col>
         <Col

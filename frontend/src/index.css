@@ -13,3 +13,7 @@ body {
   font-family: 'Roboto', sans-serif;
   color: #fff;
 }
+
+html, body {
+  overflow: auto;
+}

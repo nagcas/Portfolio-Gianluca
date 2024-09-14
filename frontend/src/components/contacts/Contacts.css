@@ -8,6 +8,7 @@
 }
 
 .content__title__contacts {
+  width: max-content;
   height: auto;
   border-radius: 25px;
   color: #fff;
@@ -15,7 +16,7 @@
   text-align: center;
   font-size: 2rem;
   background-color: #3e49543a;
-  padding: 50px 30px;
+  padding: 10px 30px;
 }
 
 .form__contact {

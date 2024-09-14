@@ -69,7 +69,7 @@ function Project3() {
               {t("project3.text-1")}
               <span className="fw-bold"> React</span>
             </p>
-            <p className="text-white fs-5">
+            <p className="text__color">
               {t("project3.text-2")} <span className="fw-bold">"EPIC Books"</span> {t("project3.text-3")}
               {t("project3.text-4")}
             </p>

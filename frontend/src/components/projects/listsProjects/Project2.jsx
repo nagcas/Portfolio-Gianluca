@@ -73,7 +73,7 @@ function Project2() {
               <span className="fw-bold"> React</span> e{" "}
               <span className="fw-bold">Node.js</span>.
             </p>
-            <p className="text-white fs-5">
+            <p className="text__color">
               {t("project2.text-2")} <span className="fw-bold">{t("project2.text-3")}</span>. {t("project2.text-4")}
             </p>
 

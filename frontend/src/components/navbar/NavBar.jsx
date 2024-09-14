@@ -32,7 +32,7 @@ function NavBar() {
     >
       <Container fluid={true}>
         {/* Logo Portfolio */}
-        <Navbar.Brand className="fs-2">
+        <Navbar.Brand>
           Gianluca <Image src={Logo} alt="Logo" className="logo" />{" "}
           Chiaravalloti
         </Navbar.Brand>

@@ -46,7 +46,7 @@ function PrivacyPolicy() {
   return (
     <>
       <Button
-        variant="outline-primary"
+        variant="outline-light"
         onClick={handleShow}
         className="btn__privacy"
       >

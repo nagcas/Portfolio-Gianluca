@@ -9,6 +9,15 @@
   color: #fff;
 }
 
+.offcanvas-header .btn-close {
+  /* background-color: white;  */
+  filter: invert(1); 
+}
+
+.offcanvas-header .btn-close:hover {
+  background-color: #f8f9fa7c;
+}
+
 .offcanvas-bottom {
   height: 200%; 
   top: auto;
@@ -16,6 +25,16 @@
   transform: translateY(100%);
   opacity: 0;
   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.offcanvas-header .btn-close {
+  outline: none;
+  box-shadow: none;
+}
+
+.offcanvas-header .btn-close:focus {
+  outline: none;
+  box-shadow: none;
 }
 
 .offcanvas-bottom.show {

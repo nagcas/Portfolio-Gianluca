@@ -48,7 +48,8 @@ function Contacts() {
     }
   }, [isLargeScreen]);
 
-  const API_URL = "http://localhost:5001";
+  // URL dell'API di backend
+  const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5001';
 
   const [errors, setErrors] = useState({});
   const [message, setMessage] = useState(null);

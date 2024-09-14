@@ -73,7 +73,7 @@ function PrivacyPolicy() {
             <h2>{t("privacy.section-1")}</h2>
             <p>
             {t("privacy.section-2")}{" "}
-              <span className="fw-bold">[https://tuo-sito.com](https://tuo-sito.com)</span>.
+              <span className="fw-bold">[https://portfolio-gianluca-phi.vercel.app/](https://portfolio-gianluca-phi.vercel.app/)</span>.
             </p>
           </section>
 

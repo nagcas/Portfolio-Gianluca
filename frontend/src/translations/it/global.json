@@ -116,5 +116,11 @@
     "section-27": "Potrebbero essere impostati da strumenti di terze parti, come i pulsanti di condivisione social.",
     "section-28": "Gestione dei cookie",
     "section-29": "Puoi gestire i cookie direttamente dal tuo browser. Ecco alcuni link utili per modificare le impostazioni dei cookie:"
+  },
+  "page404": {
+    "text-1": "Oops! La pagina che stai cercando non esiste.",
+    "text-2": "Sembra che tu abbia preso una strada sbagliata nel mio portfolio...",
+    "text-3": "Non preoccuparti, ti aiuto a tornare al profilo. 😊",
+    "link": "Torna al profilo"
   }
 }

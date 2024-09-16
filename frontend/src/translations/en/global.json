@@ -116,5 +116,11 @@
     "section-27": "May be set by third-party tools, such as social sharing buttons.",
     "section-28": "Cookie management",
     "section-29": "You can manage cookies directly from your browser. Here are some useful links to change cookie settings:"
+  },
+  "page404": {
+    "text-1": "Oops! The page you're looking for doesn't exist.",
+    "text-2": "It seems like you've taken a wrong turn in my portfolio...",
+    "text-3": "Don't worry, I'll help you get back to the profile. 😊",
+    "link": "Go back to the profile"
   }
 }

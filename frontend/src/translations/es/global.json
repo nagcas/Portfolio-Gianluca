@@ -116,5 +116,11 @@
     "section-27": "Pueden ser establecidas por herramientas de terceros, como los botones de compartir en redes sociales.",
     "section-28": "Gestión de cookies",
     "section-29": "Puedes gestionar las cookies directamente desde tu navegador. Aquí tienes algunos enlaces útiles para cambiar la configuración de cookies:"
+  },
+  "page404": {
+    "text-1": "¡Oops! La página que estás buscando no existe.",
+    "text-2": "Parece que has tomado un camino equivocado en mi portafolio...",
+    "text-3": "No te preocupes, te ayudaré a volver al perfil. 😊",
+    "link": "Volver al perfil"
   }
 }

@@ -2,7 +2,7 @@ import "./About.css";
 
 import { useEffect, useState } from "react";
 import { Col, Container, Image, Row } from "react-bootstrap";
-import Gianluca from "../../assets/profile/gianluca_.jpeg";
+import Gianluca from "../../assets/profile/gianluca.png";
 import { useTranslation } from 'react-i18next';
 import AOS from "aos";
 import "aos/dist/aos.css";

@@ -19,8 +19,7 @@ dotenv.config();
 // Inizializza l'app Express
 const app = express();
 
-// Middleware per il parsing del corpo delle richieste JSON
-app.use(express.json());
+
 
 const corsOptions = {
   origin: function (origin, callback) {
@@ -48,6 +47,9 @@ const corsOptions = {
 
 // Utilizza cors come middleware globale
 app.use(cors(corsOptions));
+
+// Middleware per il parsing del corpo delle richieste JSON
+app.use(express.json());
 
 // Connessione a MongoDB
 mongoose

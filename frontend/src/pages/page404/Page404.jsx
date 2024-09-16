@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next';
 
 function Page404() {
 
-  const { t  } = useTranslation('global');
+  const { t } = useTranslation('global');
 
   return (
     <Container className="page__not__found">
@@ -16,7 +16,7 @@ function Page404() {
         <p>{t("page404.text-2")}</p>
         <p>{t("page404.text-3")}</p>
         <Link to="/" className="home">
-        {t("page404.link")}
+          {t("page404.link")}
         </Link>
       </div>
     </Container>

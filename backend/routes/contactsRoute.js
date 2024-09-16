@@ -10,20 +10,21 @@ const router = express.Router();
 
 const API_KEY = process.env.API_KEY;
 
-
 // Definizione di una rotta GET per ottenere una lista dei messaggi con paginazione e ordinamento
-router.get('/', async (req, res) => {
-  const apiKey = req.headers['x-api-key'];
+router.get("/", async (req, res) => {
+  const apiKey = req.headers["x-api-key"];
 
   if (apiKey !== API_KEY) {
-    return res.status(403).json({ message: 'Accesso proibito: API key non valida' });
+    return res
+      .status(403)
+      .json({ message: "Accesso proibito: API key non valida" });
   }
 
   try {
     const page = parseInt(req.query.page) || 1;
     const limit = parseInt(req.query.limit) || 16;
-    const sort = req.query.sort || 'name';
-    const sortDirection = req.query.sortDirection === 'desc' ? -1 : 1;
+    const sort = req.query.sort || "name";
+    const sortDirection = req.query.sortDirection === "desc" ? -1 : 1;
     const skip = (page - 1) * limit;
 
     const contacts = await ContactPortfolio.find({})
@@ -37,13 +38,12 @@ router.get('/', async (req, res) => {
       contacts,
       currentPage: page,
       totalPages: Math.ceil(total / limit),
-      totalContacts: total
+      totalContacts: total,
     });
   } catch (err) {
     res.status(500).json({ message: err.message });
-  };
+  }
 });
-
 
 // Definizione di una rotta POST per ricevere un messaggio di contatto dalla pagina portfolio
 router.post("/", async (req, res) => {
@@ -75,7 +75,7 @@ router.post("/", async (req, res) => {
 
     // Invio email di contatto tramite Nodemailer
     await transporter.sendMail({
-      from: `Portfolio <${newContact.email}>`, 
+      from: `Portfolio <${newContact.email}>`,
       to: process.env.USER_MAILER, // Invia email all'indirizzo specificato nelle variabili d'ambiente
       subject: "Hai ricevuto un messaggio di contatto",
       html: `
@@ -96,38 +96,39 @@ router.post("/", async (req, res) => {
       `,
     });
 
-
     res.status(201).json(newContact);
   } catch (err) {
     console.error("Errore durante il salvataggio o l'invio dell'email:", err);
-    res
-      .status(500)
-      .json({
-        message: "Errore del server, impossibile processare la richiesta!",
-      });
+    res.status(500).json({
+      message: "Errore del server, impossibile processare la richiesta!",
+    });
   }
 });
 
-
 // Definizione di una route DELETE per eliminare un messaggio di un utente
-router.delete('/:contactId', async (req, res) => {
-  const apiKey = req.headers['x-api-key'];
+router.delete("/:contactId", async (req, res) => {
+  const apiKey = req.headers["x-api-key"];
 
   if (apiKey !== API_KEY) {
-    return res.status(403).json({ message: 'Accesso proibito: API key non valida' });
+    return res
+      .status(403)
+      .json({ message: "Accesso proibito: API key non valida" });
   }
 
   try {
-    const deleteContact = await ContactPortfolio.findByIdAndDelete(req.params.contactId);
+    const deleteContact = await ContactPortfolio.findByIdAndDelete(
+      req.params.contactId
+    );
     if (!deleteContact) {
-      return res.status(404).json({ message: 'Contatto non presente nel database!' });
-    };
+      return res
+        .status(404)
+        .json({ message: "Contatto non presente nel database!" });
+    }
 
-    res.json({ message: 'Messaggio eliminato con successo!' });
+    res.json({ message: "Messaggio eliminato con successo!" });
   } catch (err) {
     res.status(500).json({ message: err.message });
-  };
+  }
 });
 
 export default router;
-

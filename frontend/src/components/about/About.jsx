@@ -1,7 +1,7 @@
 import "./About.css";
 
 import { useEffect, useState } from "react";
-import { Col, Container, Image, Row } from "react-bootstrap";
+import { Button, Col, Container, Image, Row } from "react-bootstrap";
 import Gianluca from "../../assets/profile/gianluca.png";
 import { useTranslation } from 'react-i18next';
 import AOS from "aos";
@@ -75,13 +75,22 @@ function About() {
           sm={12}
           md={12}
           lg={4}
-          className="content__foto__profilo"
+          className="d-flex flex-column justify-content-center align-items-center content__foto__profilo"
         >
           <Image
             src={Gianluca}
             alt="Foto Gianluca Chiaravalloti"
             className="foto__profilo"
           />
+          <div className="download-cv">
+            <a href="../../../public/cv/CV Gianluca Chiaravalloti.pdf" download>
+              <Button 
+                variant="outline-light"
+              >
+                Download CV
+              </Button>
+            </a>
+          </div>
         </Col>
       </Row>
     </Container>

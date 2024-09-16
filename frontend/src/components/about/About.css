@@ -33,3 +33,26 @@
 .about__text {
   color: #d6c8c8;
 }
+
+.download-cv {
+  margin-top: 30px;
+}
+
+.download-cv a {  
+  text-decoration: none;
+}
+
+.download-cv button {
+  background-color: #ffffffbd;
+  color: #000;
+  border: 0;
+  padding: 10px 20px;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.download-cv button:hover {
+  background-color: #ffffff26;
+  color: #fff;
+  border: none;
+}

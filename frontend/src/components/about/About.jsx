@@ -87,7 +87,7 @@ function About() {
               <Button 
                 variant="outline-light"
               >
-                Download CV
+                <i className="bi bi-download"></i> Download CV
               </Button>
             </a>
           </div>

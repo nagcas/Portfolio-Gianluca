@@ -12,13 +12,13 @@ import {
   Row,
   Spinner,
 } from "react-bootstrap";
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from "react-i18next";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
 function Contacts() {
 
-  const { t  } = useTranslation('global');
+  const { t } = useTranslation("global");
 
   const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth >= 768);
 

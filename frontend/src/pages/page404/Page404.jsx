@@ -2,11 +2,11 @@ import "./Page404.css";
 
 import { Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from "react-i18next";
 
 function Page404() {
 
-  const { t } = useTranslation('global');
+  const { t } = useTranslation("global");
 
   return (
     <Container className="page__not__found">

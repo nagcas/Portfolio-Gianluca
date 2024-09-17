@@ -2,13 +2,13 @@ import "./PrivacyPolicy.css";
 
 import { useEffect, useState } from "react";
 import { Button, Offcanvas } from "react-bootstrap";
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from "react-i18next";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
 function PrivacyPolicy() {
 
-  const { t  } = useTranslation('global');
+  const { t } = useTranslation("global");
 
   const [show, setShow] = useState(false);
 
@@ -61,7 +61,7 @@ function PrivacyPolicy() {
       >
         <Offcanvas.Header closeButton>
           <Offcanvas.Title>
-            <h1>Privacy & Cookie Policy</h1>
+            <h1 className="title__privacy">Privacy & Cookie Policy</h1>
           </Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>

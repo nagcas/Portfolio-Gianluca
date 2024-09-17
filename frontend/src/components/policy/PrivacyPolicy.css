@@ -53,6 +53,11 @@
   padding: 100px;
 }
 
+.title__privacy {
+  font-size: 3rem;
+  color: #fff;
+}
+
 /* Smartphone - Offcanvas */
 @media (max-width: 991px) {
   .content__privacy {

@@ -3,13 +3,13 @@ import "./About.css";
 import { useEffect, useState } from "react";
 import { Button, Col, Container, Image, Row } from "react-bootstrap";
 import Gianluca from "../../assets/profile/gianluca.png";
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from "react-i18next";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
 function About() {
 
-  const { t  } = useTranslation('global');
+  const { t } = useTranslation("global");
 
   const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth >= 768);
 

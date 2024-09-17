@@ -4,11 +4,11 @@ import { Col, Container, Image, Row } from "react-bootstrap";
 import { Link } from "react-scroll";
 import Logo from "../../assets/logo/logo.png";
 import PrivacyPolicy from "../policy/PrivacyPolicy";
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from "react-i18next";
 
 function Footer() {
 
-  const { t  } = useTranslation('global');
+  const { t } = useTranslation("global");
 
   const currentYear = new Date().getFullYear();
 

@@ -62,6 +62,13 @@
   "projects": {
     "i-miei-progetti": "Mis Proyectos"
   },
+  "project4": {
+    "text-1": "Clone airbnb",
+    "text-2": "El proyecto ",
+    "text-3": " es una página web desarrollada con ",
+    "text-4": "HTML5, CSS3 y JavaScript durante la Build Week No. 2 del curso de Epicode, en colaboración con un equipo. El grupo, compuesto por Mattia Petruzzi, Gianluca Chiaravalloti, Francesca Montini y Marina Greco, creó páginas como la página de inicio, una lista de apartamentos y una página para un solo apartamento. El diseño es responsive para adaptarse a dispositivos móviles, tablets y ordenadores de escritorio. El sitio incluye funciones interactivas como el cambio de idioma y la navegación intuitiva entre las páginas.",
+    "text-5": "Descubre más sobre mi proyecto visitando la página "
+  },
   "project3": {
     "text-1": "Epic Books",
     "text-2": "El proyecto ",

@@ -6,6 +6,7 @@ import iconReact from "../../assets/icons/icons8-react-native-240.png";
 import iconHtml from "../../assets/icons/icons8-html-240.png";
 import iconCSS from "../../assets/icons/icons8-css-240.png";
 import iconJavascript from "../../assets/icons/icons8-javascript-240.png";
+import iconPython from "../../assets/icons/icons8-python-240.png";
 import { useTranslation } from "react-i18next";
 
 
@@ -25,6 +26,7 @@ function Hero() {
               <Image src={iconHtml} alt="Icon Html5" className="icons" />
               <Image src={iconCSS} alt="Icon CSS3" className="icons" />
               <Image src={iconJavascript} alt="Icon Javascript" className="icons" />
+              <Image src={iconPython} alt="Icon Python" className="icons" />
             </div>
           </Col>
          

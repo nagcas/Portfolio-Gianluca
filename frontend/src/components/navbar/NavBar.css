@@ -42,7 +42,7 @@
 .menu__navbar {
   color: #fff;
   transition: color 0.3s;
-  backdrop-filter: blur(40px);
+  backdrop-filter: blur(20px);
 }
 
 .menu__navbar__link {

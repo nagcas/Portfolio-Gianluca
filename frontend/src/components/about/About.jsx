@@ -55,10 +55,10 @@ function About() {
           </p>
 
           <p className="about__text">
-            {t("about.text-3")} <span className="fw-bold">{t("about.text-4")}</span>, 
+            {t("about.text-3")} <span className="fw-bold">{t("about.text-4")}</span>,{" "} 
             {t("about.text-5")}
-            <span className="fw-bold">{t("about.text-6")}</span>, {t("about.text-7")}
-             <span className="fw-bold">{t("about.text-8")}</span>, 
+            <span className="fw-bold">{t("about.text-6")}</span>,{" "}{t("about.text-7")}
+             <span className="fw-bold">{t("about.text-8")}</span>,{" "} 
             {t("about.text-9")}
           </p>
 

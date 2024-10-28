@@ -62,6 +62,13 @@
   "projects": {
     "i-miei-progetti": "My Projects"
   },
+  "project5": {
+    "text-1": "Weather App",
+    "text-2": "The project ",
+    "text-3": " is an open-source web application ",
+    "text-4": "created for Hacktoberfest, which allows users to view real-time weather conditions. This experience allowed me to improve not only my technical skills but also my ability to collaborate in a shared development environment, learning the importance of communication and constructive feedback.",
+    "text-5": "Learn more about my project by visiting the page "
+  },
   "project4": {
     "text-1": "Clone airbnb",
     "text-2": "The project ",

@@ -7,6 +7,7 @@ import Project3 from "./listsProjects/Project3";
 import { useTranslation } from "react-i18next";
 import "aos/dist/aos.css";
 import Project4 from "./listsProjects/Projects4";
+import Project5 from "./listsProjects/Projects5";
 
 function Projects() {
 
@@ -15,6 +16,7 @@ function Projects() {
   return (
     <Container id="projects">
       <h2 className="content__title__projects">{t("projects.i-miei-progetti")}</h2>
+      <Project5 />
       <Project1 />
       <Project2 />
       <Project3 />

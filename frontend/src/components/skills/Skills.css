@@ -28,6 +28,10 @@
   cursor: pointer;
 }
 
+.skills:hover {
+  background-color: #e0e0e057;
+}
+
 .skill-bar {
   background-color: #e0e0e0;
   border-radius: 25px;

@@ -149,13 +149,13 @@ function Contacts() {
         <Col data-aos="fade-up" sm={12} md={12} lg={4}>
           <div className="d-flex flex-column justify-content-center align-items-center mt-4">
             <i className="bi bi-envelope-at-fill icons__email"></i>
-            <p className="mt-3 fs-4">
+            <p className="mt-3 fs-4 text-white">
               {t("contacts.gianluca")}
             </p>
-            <p className="fs-4">
+            <p className="fs-4 text-white">
             {t("contacts.cell")} +39 351 8517108
             </p>
-            <p className="fs-4">
+            <p className="fs-4 text-white">
             {t("contacts.email")} <span className="fw-bold">studio.nagcas@outlook.it</span>
             </p>
           </div>

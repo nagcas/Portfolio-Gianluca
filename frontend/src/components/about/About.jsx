@@ -83,8 +83,8 @@ function About() {
             className="foto__profilo"
           />
           <div className="download-cv">
-            <a href="../../../public/cv/CV_Gianluca_Chiaravalloti.pdf" download>
-              <Button 
+            <a href="/cv/CV_Gianluca_Chiaravalloti.pdf" download>
+              <Button
                 variant="outline-light"
               >
                 <i className="bi bi-download"></i> Download CV

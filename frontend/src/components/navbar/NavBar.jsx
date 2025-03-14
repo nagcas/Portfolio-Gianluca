@@ -33,7 +33,7 @@ function NavBar() {
       <Container fluid={true}>
         {/* Logo Portfolio */}
         <Navbar.Brand>
-          Gianluca <Image src={Logo} alt="Logo" className="logo" />{" "}
+          Gianluca <Image src={Logo} alt="Logo di Gianluca Chiaravalloti" className="logo" />{" "}
           Chiaravalloti
         </Navbar.Brand>
 
@@ -59,7 +59,7 @@ function NavBar() {
             closeButton
           >
             <Offcanvas.Title id="offcanvasNavbarLabel-expand-lg">
-              Gianluca <Image src={Logo} alt="Logo" className="logo" />{" "}
+              Gianluca <Image src={Logo} alt="Logo di Gianluca Chiaravalloti" className="logo" />{" "}
               Chiaravalloti
             </Offcanvas.Title>
           </Offcanvas.Header>

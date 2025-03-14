@@ -81,6 +81,7 @@ function About() {
             src={Gianluca}
             alt="Foto Gianluca Chiaravalloti"
             className="foto__profilo"
+            loading="lazy"
           />
           <div className="download-cv">
             <a href="/cv/CV_Gianluca_Chiaravalloti.pdf" download>

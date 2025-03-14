@@ -52,7 +52,12 @@ function Project3() {
           rel="noopener noreferrer"
           className="link__pages"
         >
-           <Image src={EpicBooks} alt="Strive Blog" className="projects" />
+           <Image 
+            src={EpicBooks} 
+            alt="Strive Blog" 
+            className="projects" 
+            loading="lazy"
+          />
         </a>
         </Col>
         <Col 

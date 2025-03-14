@@ -56,6 +56,7 @@ function Project1() {
             src={SafeQuakeAlert}
             alt="SafeQuake Alert"
             className="projects"
+            loading="lazy"
           />
         </a>  
         </Col>

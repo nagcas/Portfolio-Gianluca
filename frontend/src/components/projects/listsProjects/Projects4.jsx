@@ -52,7 +52,12 @@ function Project4() {
           rel="noopener noreferrer"
           className="link__pages"
         >
-           <Image src={airbnb} alt="Clone airbnb" className="projects" />
+           <Image 
+            src={airbnb}
+            alt="Clone airbnb"
+            className="projects"
+            loading="lazy"
+          />
         </a>
         </Col>
         <Col 

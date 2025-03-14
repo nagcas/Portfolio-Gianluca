@@ -54,7 +54,8 @@ function Project2() {
             <Image 
               src={StriveBlog} 
               alt="Strive Blog" 
-              className="projects" 
+              className="projects"
+              loading="lazy"
             />
           </a>
         </Col>

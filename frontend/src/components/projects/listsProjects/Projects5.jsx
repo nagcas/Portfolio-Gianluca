@@ -52,7 +52,12 @@ function Project5() {
           rel="noopener noreferrer"
           className="link__pages"
         >
-           <Image src={weather} alt="Weather app" className="projects" />
+           <Image 
+            src={weather}
+            alt="Weather app"
+            className="projects"
+            loading="lazy"
+          />
         </a>
         </Col>
         <Col 

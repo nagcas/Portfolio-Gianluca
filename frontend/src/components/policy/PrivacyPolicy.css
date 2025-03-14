@@ -1,16 +1,15 @@
 .btn__privacy {
-  color: #fff;
-  border: 1px solid #fff;
+  color: #eee;
+  border: 1px solid #eee;
 }
 
 .btn__privacy:hover {
   background-color: #3e49545b;
-  border: 1px solid #fff;
-  color: #fff;
+  border: 1px solid #eee;
+  color: #eee;
 }
 
 .offcanvas-header .btn-close {
-  /* background-color: white;  */
   filter: invert(1); 
 }
 
@@ -49,13 +48,13 @@
 .content__privacy {
   background-color: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(20px);
-  color: #fff;
+  color: #eee;
   padding: 100px;
 }
 
 .title__privacy {
   font-size: 3rem;
-  color: #fff;
+  color: #eee;
 }
 
 /* Smartphone - Offcanvas */

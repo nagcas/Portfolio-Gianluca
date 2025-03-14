@@ -36,8 +36,8 @@ p {
   display: inline-block;
   margin-top: 20px;
   padding: 10px 20px;
-  background-color: #ffffffbd;
-  color: #000;
+  background-color: #eeefffbd;
+  color: #444;
   border: none;
   border-radius: 15px;
   text-decoration: none;
@@ -45,7 +45,7 @@ p {
 }
 
 .home:hover {
-  background-color: #ffffff26;
-  color: #fff;
+  background-color: #eeefff26;
+  color: #eee;
   border: none;
 }

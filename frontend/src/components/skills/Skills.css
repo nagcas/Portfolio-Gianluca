@@ -9,7 +9,7 @@
   width: max-content;
   height: auto;
   border-radius: 25px;
-  color: #fff;
+  color: #eee;
   margin: 60px 0 100px 0;
   text-align: center;
   font-size: 2rem;
@@ -43,7 +43,7 @@
 
 .skill-icon {
   font-size: 2.5rem;
-  color: #fff;
+  color: #eee;
   margin-bottom: 10px;
 }
 
@@ -62,7 +62,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #fff;
+  color: #eee;
   font-weight: bold;
   transition: width 1.5s ease-in-out;
 }
@@ -73,5 +73,5 @@
 
 .skills p {
   font-size: 1.2rem;
-  color: #fff;
+  color: #eee;
 }

@@ -2,7 +2,7 @@
   height: auto;
   background-color: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(15px);
-  color: #fff;
+  color: #eee;
 }
 
 .footer h5 {
@@ -14,12 +14,12 @@
 .footer p {
   margin: 0;
   font-size: 1.0rem;
-  color: #fff;
+  color: #eee;
 }
 
 .footer .social-icons a {
   margin: 0 10px;
-  color: #fff;
+  color: #eee;
   font-size: 1.5rem;
   transition: color 0.3s;
 }
@@ -34,7 +34,7 @@
 .license-link {
   cursor: pointer;
   text-decoration: none;
-  color: #fff;
+  color: #eee;
 }
 
 .logo-link:hover,

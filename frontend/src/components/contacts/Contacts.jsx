@@ -247,11 +247,10 @@ function Contacts() {
                   }
                 >
                   <Form.Control
-                    className="mb-3 form__input"
+                    className="mb-3 form__textarea"
                     as="textarea"
                     placeholder={t("contacts.inserisci-il-tuo-messaggio")}
                     aria-label={t("contacts.inserisci-il-tuo-messaggio")}
-                    style={{ height: "200px" }}
                     name="message"
                     value={formContact.message}
                     onChange={handleInputChange}
@@ -259,11 +258,11 @@ function Contacts() {
                   />
                 </FloatingLabel>
               </Col>
-              <Col md={12}>
+              <Col md={12} className="text-end">
                 <Button
                   type="submit"
                   variant="outline-light"
-                  className="btn__send__form w-100 form_btn"
+                  className="btn__send__form"
                   aria-label={t("contacts.inserisci-il-tuo-messaggio")}
                   disabled={loading}
                 >

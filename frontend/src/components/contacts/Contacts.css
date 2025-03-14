@@ -11,7 +11,7 @@
   width: max-content;
   height: auto;
   border-radius: 25px;
-  color: #fff;
+  color: #eee;
   margin: 60px 0 60px 0;
   text-align: center;
   font-size: 2rem;
@@ -21,31 +21,33 @@
 
 .form__contact {
   max-width: 900px;
-  border-color: #000;
 }
 
 .form-control {
   background-color: #ffffff26;
-  color: #fff;
+  color: #eee;
 }
 
 .form-control:focus {
   background-color: #ffffff26;
-  color: #fff;
-  border-color: #000;
+  color: #eee;
+  border-color: #444;
   box-shadow: none;
 }
 
 .btn__send__form {
   height: 50px;
+  padding: 0 36px;
   background-color: #ffffffbd;
-  color: #000;
+  color: #444;
   border: none;
+  border-radius: 15px;
+  text-transform: uppercase;
 }
 
 .btn__send__form:hover {
   background-color: #272727bd;
-  color: #fff;
+  color: #eee;
   border: none;
 }
 
@@ -53,16 +55,19 @@
   font-size: 8rem;
 }
 
-.form__input {
+.form__input, .form__textarea {
   border: 0;
   outline: none;
 }
 
-.form__input:hover {
+.form__input:hover, .form__textarea:hover {
   background-color: #272727bd;
 }
 
-.form__btn {
-  border: 0;
+.form__textarea {
+  min-width: 100%;
+  resize: none;
+  min-height: 200px !important;
+  max-height: 400px !important;
 }
 

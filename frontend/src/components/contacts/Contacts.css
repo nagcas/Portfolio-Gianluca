@@ -44,12 +44,25 @@
 }
 
 .btn__send__form:hover {
-  background-color: #ffffff26;
+  background-color: #272727bd;
   color: #fff;
   border: none;
 }
 
 .icons__email {
   font-size: 8rem;
+}
+
+.form__input {
+  border: 0;
+  outline: none;
+}
+
+.form__input:hover {
+  background-color: #272727bd;
+}
+
+.form__btn {
+  border: 0;
 }
 

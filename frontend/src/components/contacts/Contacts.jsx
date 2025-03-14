@@ -161,7 +161,7 @@ function Contacts() {
           </div>
         </Col>
         <Col data-aos="fade-up" sm={12} md={12} lg={8}>
-          <Form onSubmit={handleSaveSubmit} className="content__contacts">
+          <Form onSubmit={handleSaveSubmit} className="content__contacts" autoComplete="off">
             <Row className="form__contact">
               <Col md={6}>
                 <FloatingLabel
@@ -176,6 +176,7 @@ function Contacts() {
                   className="mb-3"
                 >
                   <Form.Control
+                    className="form__input"
                     type="text"
                     name="name"
                     aria-label={t("contacts.inserisci-il-tuo-nome")}
@@ -199,6 +200,7 @@ function Contacts() {
                   className="mb-3"
                 >
                   <Form.Control
+                    className="form__input"
                     type="text"
                     name="lastname"
                     aria-label={t("contacts.inserisci-il-tuo-cognome")}
@@ -222,6 +224,7 @@ function Contacts() {
                   className="mb-3"
                 >
                   <Form.Control
+                    className="form__input"
                     type="email"
                     name="email"
                     aria-label={t("contacts.inserisci-la-tua-email")}
@@ -244,7 +247,7 @@ function Contacts() {
                   }
                 >
                   <Form.Control
-                    className="mb-3"
+                    className="mb-3 form__input"
                     as="textarea"
                     placeholder={t("contacts.inserisci-il-tuo-messaggio")}
                     aria-label={t("contacts.inserisci-il-tuo-messaggio")}
@@ -260,7 +263,7 @@ function Contacts() {
                 <Button
                   type="submit"
                   variant="outline-light"
-                  className="btn__send__form w-100"
+                  className="btn__send__form w-100 form_btn"
                   aria-label={t("contacts.inserisci-il-tuo-messaggio")}
                   disabled={loading}
                 >

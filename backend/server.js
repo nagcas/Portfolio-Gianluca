@@ -19,8 +19,6 @@ dotenv.config();
 // Inizializza l'app Express
 const app = express();
 
-
-
 const corsOptions = {
   origin: function (origin, callback) {
     // Definiamo una whitelist di origini consentite.

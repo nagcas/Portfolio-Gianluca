@@ -46,6 +46,7 @@ const corsOptions = {
 // Utilizza cors come middleware globale
 app.use(cors(corsOptions));
 
+
 // Middleware per il parsing del corpo delle richieste JSON
 app.use(express.json());
 
@@ -68,6 +69,7 @@ app.use(genericErrorHandler);
 
 // Avvio del server
 app.listen(PORT, () => {
+  console.clear();
   console.log(`Server acceso sulla porta ${PORT}`);
   console.log("Sono disponibili i seguenti endpoints:");
   console.table(endpoints(app));

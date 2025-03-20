@@ -59,6 +59,7 @@ router.post("/", async (req, res) => {
       message,
     }
   );
+  console.log(contact);
   
   try {
     const newContact = await contact.save();

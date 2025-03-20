@@ -47,12 +47,21 @@ router.get("/", async (req, res) => {
 
 // Definizione di una rotta POST per ricevere un messaggio di contatto dalla pagina portfolio
 router.post("/", async (req, res) => {
+  const { name, lastname, email, message } = req?.body;
+  // const newContactData = req.body;
+  
+  // Creazione e salvataggio del contatto
+  const contact = new ContactPortfolio(
+    {
+      name,
+      lastname,
+      email,
+      message,
+    }
+  );
+  
   try {
-    const newContactData = req.body;
-
-    // Creazione e salvataggio del contatto
-    const newContact = new ContactPortfolio(newContactData);
-    await newContact.save();
+    const newContact = await contact.save();
 
     // Invio email di conferma tramite Nodemailer
     await transporter.sendMail({
@@ -99,7 +108,7 @@ router.post("/", async (req, res) => {
     res.status(201).json(newContact);
   } catch (err) {
     console.error("Errore durante il salvataggio o l'invio dell'email:", err);
-    res.status(500).json({
+    res.status(400).json({
       message: "Errore del server, impossibile processare la richiesta!",
     });
   }

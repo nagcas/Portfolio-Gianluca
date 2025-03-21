@@ -3,7 +3,6 @@
 // Importa i pacchetti necessari
 import express from "express";
 import endpoints from "express-list-endpoints";
-import mongoose from "mongoose";
 import dotenv from "dotenv";
 import contactsRoutes from "./routes/contactsRoute.js";
 import cors from "cors";
@@ -12,6 +11,7 @@ import {
   genericErrorHandler,
   notFoundHandler,
 } from "./middlewares/errorHandlers.js";
+import { connectMongo } from "./config/connectMongoDB.js";
 
 // Carica le variabili d'ambiente
 dotenv.config();
@@ -50,12 +50,6 @@ app.use(cors(corsOptions));
 // Middleware per il parsing del corpo delle richieste JSON
 app.use(express.json());
 
-// Connessione a MongoDB
-mongoose
-  .connect(process.env.MONGO_URI)
-  .then(() => console.log("MongoDB connesso"))
-  .catch((err) => console.error("MongoDB: errore di connessione.", err));
-
 // Definizione della porta su cui il server ascolterà
 const PORT = process.env.PORT || 5000;
 
@@ -68,9 +62,14 @@ app.use(notFoundHandler);
 app.use(genericErrorHandler);
 
 // Avvio del server
-app.listen(PORT, () => {
-  console.clear();
-  console.log(`Server acceso sulla porta ${PORT}`);
-  console.log("Sono disponibili i seguenti endpoints:");
-  console.table(endpoints(app));
-});
+try {
+  app.listen(PORT, () => {
+    console.clear();
+    console.log(`Server acceso sulla porta ${PORT}`);
+    console.log("Sono disponibili i seguenti endpoints:");
+    connectMongo();
+    console.table(endpoints(app));
+  });
+} catch (error) {
+  console.log(error.message);
+}

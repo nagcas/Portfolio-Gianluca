@@ -20,7 +20,7 @@ const contactsSchema = new Schema(
       lowercase: true,
     },
 
-    message: {
+    content: {
       type: String,
       required: true,
     },

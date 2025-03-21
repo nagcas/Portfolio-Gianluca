@@ -17,7 +17,11 @@ router.get("/", async (req, res) => {
   if (apiKey !== API_KEY) {
     return res
       .status(403)
-      .json({ message: "Accesso proibito: API key non valida" });
+      .json(
+        { 
+          message: "Accesso proibito: API key non valida" 
+        }
+      );
   }
 
   try {
@@ -41,14 +45,17 @@ router.get("/", async (req, res) => {
       totalContacts: total,
     });
   } catch (err) {
-    res.status(500).json({ message: err.message });
+    res.status(500).json(
+      { 
+        message: err.message 
+      }
+    );
   }
 });
 
 // Definizione di una rotta POST per ricevere un messaggio di contatto dalla pagina portfolio
 router.post("/", async (req, res) => {
-  const { name, lastname, email, message } = req?.body;
-  // const newContactData = req.body;
+  const { name, lastname, email, content } = req?.body;
   
   // Creazione e salvataggio del contatto
   const contact = new ContactPortfolio(
@@ -56,10 +63,9 @@ router.post("/", async (req, res) => {
       name,
       lastname,
       email,
-      message,
+      content,
     }
   );
-  console.log(contact);
   
   try {
     const newContact = await contact.save();
@@ -67,25 +73,25 @@ router.post("/", async (req, res) => {
     // Invio email di conferma tramite Nodemailer
     await transporter.sendMail({
       from: '"Portfolio" <studio.nagcas@outlook.it>', // Controlla l'indirizzo email mittente
-      to: newContact.email, // Invia email al contatto
+      to: contact.email, // Invia email al contatto
       subject: "Conferma di ricezione del tuo messaggio",
       html: `
-        <p>Ciao <strong>${newContact.name}</strong>,</p>
+        <p>Ciao <strong>${contact.name}</strong>,</p>
         <p>Grazie per averci contattato tramite il <strong>Portfolio di Gianluca Chiaravalloti</strong>.</p>
         <p>Abbiamo ricevuto il tuo messaggio e ti risponderemo al più presto.</p>
         </br>
         <p><strong>Questo è il tuo messaggio:</strong></p>
-        <p>${newContact.message}</p>
+        <p>${contact.content}</p>
         </br>
         <p>Se desideri fornire ulteriori dettagli, non esitare a rispondere a questa email.</p>
         <p>Grazie per la tua pazienza,</p>
-        <p><strong>Dott. Gianluca Chiaravalloti</strong></p>
+        <p><strong>Dr. Gianluca Chiaravalloti</strong></p>
       `,
     });
 
     // Invio email di contatto tramite Nodemailer
     await transporter.sendMail({
-      from: `Portfolio <${newContact.email}>`,
+      from: `Portfolio <${contact.email}>`,
       to: process.env.USER_MAILER, // Invia email all'indirizzo specificato nelle variabili d'ambiente
       subject: "Hai ricevuto un messaggio di contatto",
       html: `
@@ -93,25 +99,27 @@ router.post("/", async (req, res) => {
         <p>Hai ricevuto un nuovo messaggio tramite il <strong>Portfolio di Gianluca Chiaravalloti</strong>.</p>
         </br>
         <p><strong>Dettagli del contatto:</strong></p>
-        <p><strong>Nome:</strong> ${newContact.name}</p>
-        <p><strong>Cognome:</strong> ${newContact.lastname}</p>
-        <p><strong>Email:</strong> ${newContact.email}</p>
+        <p><strong>Nome:</strong> ${contact.name}</p>
+        <p><strong>Cognome:</strong> ${contact.lastname}</p>
+        <p><strong>Email:</strong> ${contact.email}</p>
         </br>
         <p><strong>Messaggio:</strong></p>
-        <p>${newContact.message}</p>
+        <p>${contact.content}</p>
         </br>
         <p>Se desideri fornire ulteriori dettagli o rispondere al messaggio, puoi farlo direttamente rispondendo a questa email.</p>
         <p>Grazie per la tua attenzione,</p>
-        <p><strong>Il Team del Portfolio</strong></p>
+        <p><strong>Dr. Gianluca Chiaravalloti</strong></p>
       `,
     });
 
     res.status(201).json(newContact);
   } catch (err) {
     console.error("Errore durante il salvataggio o l'invio dell'email:", err);
-    res.status(400).json({
-      message: "Errore del server, impossibile processare la richiesta!",
-    });
+    res.status(400).json(
+      {
+        message: "Errore del server, impossibile processare la richiesta!",
+      }
+    );
   }
 });
 
@@ -122,7 +130,11 @@ router.delete("/:contactId", async (req, res) => {
   if (apiKey !== API_KEY) {
     return res
       .status(403)
-      .json({ message: "Accesso proibito: API key non valida" });
+      .json(
+        { 
+          message: "Accesso proibito: API key non valida" 
+        }
+      );
   }
 
   try {
@@ -135,9 +147,17 @@ router.delete("/:contactId", async (req, res) => {
         .json({ message: "Contatto non presente nel database!" });
     }
 
-    res.json({ message: "Messaggio eliminato con successo!" });
+    res.json(
+      { 
+        message: "Messaggio eliminato con successo!" 
+      }
+    );
   } catch (err) {
-    res.status(500).json({ message: err.message });
+    res.status(500).json(
+      { 
+        message: err.message 
+      }
+    );
   }
 });
 

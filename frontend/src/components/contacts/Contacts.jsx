@@ -58,7 +58,7 @@ function Contacts() {
     name: "",
     lastname: "",
     email: "",
-    message: "",
+    content: "",
   });
 
   // Gestisce i cambiamenti nei campi di input del modulo form
@@ -83,8 +83,8 @@ function Contacts() {
     if (!formContact.email.trim()) {
       newErrors.email = t("contacts.devi-inserire-la-tua-email");
     }
-    if (!formContact.message.trim()) {
-      newErrors.message = t("contacts.devi-inserire-il-tuo-messaggio");
+    if (!formContact.content.trim()) {
+      newErrors.content = t("contacts.devi-inserire-il-tuo-messaggio");
     }
 
     return newErrors;
@@ -128,7 +128,7 @@ function Contacts() {
           name: "",
           lastname: "",
           email: "",
-          message: "",
+          content: "",
         });
         setMessage(null); // Rimuove il messaggio di successo
       }, 1500);
@@ -239,8 +239,8 @@ function Contacts() {
                 <FloatingLabel
                   controlId="contact-message"
                   label={
-                    errors.message ? (
-                      <span className="text-danger">{errors.message}</span>
+                    errors.content ? (
+                      <span className="text-danger">{errors.content}</span>
                     ) : (
                       t("contacts.inserisci-il-tuo-messaggio")
                     )
@@ -251,10 +251,10 @@ function Contacts() {
                     as="textarea"
                     placeholder={t("contacts.inserisci-il-tuo-messaggio")}
                     aria-label={t("contacts.inserisci-il-tuo-messaggio")}
-                    name="message"
-                    value={formContact.message}
+                    name="content"
+                    value={formContact.content}
                     onChange={handleInputChange}
-                    isInvalid={!!errors.message}
+                    isInvalid={!!errors.content}
                   />
                 </FloatingLabel>
               </Col>

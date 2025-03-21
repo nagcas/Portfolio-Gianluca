@@ -95,7 +95,7 @@ router.post("/", async (req, res) => {
       to: process.env.USER_MAILER, // Invia email all'indirizzo specificato nelle variabili d'ambiente
       subject: "Hai ricevuto un messaggio di contatto",
       html: `
-        <p>Ciao Dott. Gianluca Chiaravalloti,</p>
+        <p>Ciao Dr. Gianluca Chiaravalloti,</p>
         <p>Hai ricevuto un nuovo messaggio tramite il <strong>Portfolio di Gianluca Chiaravalloti</strong>.</p>
         </br>
         <p><strong>Dettagli del contatto:</strong></p>

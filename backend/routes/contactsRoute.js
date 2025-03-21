@@ -1,6 +1,7 @@
 import express from "express";
 import ContactPortfolio from "../models/contacts.js";
 import { transporter } from "../config/mailer.js";
+import { getKey } from "../middlewares/getKy.js";
 import dotenv from "dotenv";
 
 // Carica le variabili d'ambiente
@@ -8,22 +9,25 @@ dotenv.config();
 
 const router = express.Router();
 
-const API_KEY = process.env.API_KEY;
+// const API_KEY = process.env.API_KEY;
+
+// const getKey = () => {
+//   const apiKey = req.headers["x-api-key"];
+
+//   if (apiKey !== API_KEY) {
+//     return res
+//       .status(403)
+//       .json(
+//         { 
+//           message: "Accesso proibito: API key non valida" 
+//         }
+//       );
+//   }
+// }
 
 // Definizione di una rotta GET per ottenere una lista dei messaggi con paginazione e ordinamento
-router.get("/", async (req, res) => {
-  const apiKey = req.headers["x-api-key"];
-
-  if (apiKey !== API_KEY) {
-    return res
-      .status(403)
-      .json(
-        { 
-          message: "Accesso proibito: API key non valida" 
-        }
-      );
-  }
-
+router.get("/", getKey, async (req, res) => {
+  
   try {
     const page = parseInt(req.query.page) || 1;
     const limit = parseInt(req.query.limit) || 16;
@@ -55,6 +59,7 @@ router.get("/", async (req, res) => {
 
 // Definizione di una rotta POST per ricevere un messaggio di contatto dalla pagina portfolio
 router.post("/", async (req, res) => {
+
   const { name, lastname, email, content } = req?.body;
   
   // Creazione e salvataggio del contatto
@@ -124,18 +129,7 @@ router.post("/", async (req, res) => {
 });
 
 // Definizione di una route DELETE per eliminare un messaggio di un utente
-router.delete("/:contactId", async (req, res) => {
-  const apiKey = req.headers["x-api-key"];
-
-  if (apiKey !== API_KEY) {
-    return res
-      .status(403)
-      .json(
-        { 
-          message: "Accesso proibito: API key non valida" 
-        }
-      );
-  }
+router.delete("/:contactId", getKey, async (req, res) => {
 
   try {
     const deleteContact = await ContactPortfolio.findByIdAndDelete(

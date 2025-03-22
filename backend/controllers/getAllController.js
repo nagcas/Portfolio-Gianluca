@@ -6,7 +6,7 @@ const getAllContacts = async (req, res) => {
     const page = parseInt(req.query.page) || 1
     const limit = parseInt(req.query.limit) || 16
     const sort = req.query.sort || 'name'
-    const sortDirection = req.query.sortDirection === 'desc' ? -1 : 1
+    const sortDirection = req.query.sortDirection === 'asc' ? 1 : -1
     const skip = (page - 1) * limit
 
     const contacts = await ContactPortfolio.find({})

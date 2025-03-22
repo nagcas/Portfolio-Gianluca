@@ -1,19 +1,15 @@
-import dotenv from "dotenv";
+import dotenv from 'dotenv'
 
-dotenv.config();
+dotenv.config()
 
-const API_KEY = process.env.API_KEY;
+const API_KEY = process.env.API_KEY
 
-export const getKey = () => {
-  const apiKey = req.headers["x-api-key"];
+export const getKey = (req, res) => {
+  const apikey = req.params.apiKey
 
-  if (apiKey !== API_KEY) {
-    return res
-      .status(403)
-      .json(
-        { 
-          message: "Accesso proibito: API key non valida!" 
-        }
-      );
+  if (apikey !== API_KEY) {
+    return res.status(403).json({
+      message: 'Accesso proibito: API key non valida!'
+    })
   }
 }

@@ -103,7 +103,7 @@ function Contacts() {
     setLoading(true);
 
     try {
-      const response = await fetch(`${API_URL}/api/contacts-portfolio`, {
+      const response = await fetch(`${API_URL}/contacts-portfolio`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

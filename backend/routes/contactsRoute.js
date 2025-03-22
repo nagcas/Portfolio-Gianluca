@@ -13,6 +13,6 @@ router.get('/', getKey, getAllContacts)
 router.post('/', postContact)
 
 // Definizione di una route DELETE per eliminare un messaggio di un utente
-router.delete('/:contactId', getKey, deleteContact)
+router.delete('/:contactId/', getKey, deleteContact)
 
 export default router

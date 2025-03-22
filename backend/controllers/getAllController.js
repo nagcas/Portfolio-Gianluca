@@ -22,8 +22,6 @@ const getAllContacts = async (req, res) => {
       totalPages: Math.ceil(total / limit),
       totalContacts: total
     })
-
-    console.log(contacts)
   } catch (err) {
     res.status(500).json({
       message: err.message

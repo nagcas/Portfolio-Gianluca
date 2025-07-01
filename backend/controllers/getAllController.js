@@ -9,18 +9,19 @@ const getAllContacts = async (req, res) => {
     const sortDirection = req.query.sortDirection === 'asc' ? 1 : -1
     const skip = (page - 1) * limit
 
-    const contacts = await ContactPortfolio.find({})
+    const contacts = await ContactPortfolio.findWithDeleted({})
       .sort({ [sort]: sortDirection })
       .skip(skip)
       .limit(limit)
 
-    const total = await ContactPortfolio.countDocuments()
+    const total = await ContactPortfolio.countDocumentsWithDeleted()
 
     res.json({
       contacts,
       currentPage: page,
       totalPages: Math.ceil(total / limit),
-      totalContacts: total
+      totalContacts: total,
+      message: 'Lista contatti visualizzata correttamente',
     })
   } catch (err) {
     res.status(500).json({

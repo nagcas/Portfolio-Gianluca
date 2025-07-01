@@ -20,7 +20,10 @@ const postContact = async (req, res) => {
     // Invio email con il servizio di nodemailer
     await sendEmailContact(newContact)
 
-    res.status(201).json(newContact)
+    res.status(201).json({
+      newContact,
+      message: 'Messaggio inviato correttamente',
+    })
   } catch (err) {
     handleHttpErrors({
       res,

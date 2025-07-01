@@ -3,9 +3,10 @@ import ContactPortfolio from '../models/contacts.js'
 // Definizione di un controller DELETE per eliminare un messaggio di un utente
 const deleteContact = async (req, res) => {
   try {
-    const deleteContact = await ContactPortfolio.findByIdAndDelete(
-      req.params.contactId
-    )
+    const { contactId } = req.params
+
+    const deleteContact = await ContactPortfolio.delete({ _id:contactId })
+    
     if (!deleteContact) {
       return res
         .status(404)
@@ -13,7 +14,7 @@ const deleteContact = async (req, res) => {
     }
 
     res.json({
-      message: 'Messaggio eliminato con successo!'
+      message: 'Messaggio eliminato con successo'
     })
   } catch (err) {
     res.status(500).json({

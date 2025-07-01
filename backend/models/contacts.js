@@ -1,4 +1,5 @@
 import { Schema, model } from 'mongoose'
+import { mongooseDelete } from 'mongoose-delete'
 
 // Schema contacts
 const contactsSchema = new Schema(
@@ -30,6 +31,9 @@ const contactsSchema = new Schema(
     collection: 'contactsPortfolio'
   }
 )
+
+// Plugin soft-delete
+contactsSchema.plugin(mongooseDelete, { overrideMethos: 'all' })
 
 // Creazione del modello contatti basato sullo schema contactsSchema
 const ContactPortfolio = model('contactPortfolio', contactsSchema)

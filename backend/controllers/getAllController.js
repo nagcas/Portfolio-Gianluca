@@ -9,7 +9,7 @@ const getAllContacts = async (req, res) => {
     const sortDirection = req.query.sortDirection === 'asc' ? 1 : -1
     const skip = (page - 1) * limit
 
-    const contacts = await ContactPortfolio.findWithDeleted({})
+    const contacts = await ContactPortfolio.findWithDeleted()
       .sort({ [sort]: sortDirection })
       .skip(skip)
       .limit(limit)

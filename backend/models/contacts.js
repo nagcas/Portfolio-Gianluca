@@ -19,7 +19,6 @@ const contactsSchema = new Schema(
       match: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
       lowercase: true
     },
-
     content: {
       type: String,
       required: true
@@ -27,12 +26,13 @@ const contactsSchema = new Schema(
   },
   {
     timestamps: true,
+    versionKey: false,
     collection: 'contactsPortfolio'
   }
 )
 
 // Creazione del modello contatti basato sullo schema contactsSchema
-const ContactPortfolio = model('ContactPortfolio', contactsSchema)
+const ContactPortfolio = model('contactPortfolio', contactsSchema)
 
 // Esportazione del modello User
 export default ContactPortfolio

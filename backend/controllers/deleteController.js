@@ -14,6 +14,7 @@ const deleteContact = async (req, res) => {
     }
 
     res.json({
+      deleteContact,
       message: 'Messaggio eliminato con successo'
     })
   } catch (err) {

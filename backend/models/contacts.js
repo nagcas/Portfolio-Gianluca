@@ -1,5 +1,5 @@
 import { Schema, model } from 'mongoose'
-import { mongooseDelete } from 'mongoose-delete'
+import mongooseDelete from 'mongoose-delete'
 
 // Schema contacts
 const contactsSchema = new Schema(

@@ -30,13 +30,13 @@ function Hero() {
             </div>
           </Col>
          
-          <Col>
+          {/* <Col>
             <Image 
               src={imageProfile} 
               alt="Image Profile" 
               className="image__profile__hero"
             />
-          </Col>
+          </Col> */}
         </Row>
       </div>
      

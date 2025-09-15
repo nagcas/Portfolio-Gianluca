@@ -62,6 +62,13 @@
   "projects": {
     "i-miei-progetti": "I miei progetti"
   },
+  "project6": {
+    "text-1": "TerraQuake API",
+    "text-2": "Il progetto ",
+    "text-3": " è una piattaforma open-source ",
+    "text-4": "che fornisce accesso a dati sismici in tempo reale. Creato per favorire ricerca, sviluppo e applicazioni orientate alla sicurezza, il progetto si arricchisce grazie alle collaborazioni internazionali dei contributors, dimostrando il valore della cooperazione globale.",
+    "text-5": "Scopri di più sul mio progetto visitando la pagina "
+  },
   "project5": {
     "text-1": "Weather App",
     "text-2": "Il progetto ",

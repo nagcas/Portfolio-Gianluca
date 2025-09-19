@@ -47,7 +47,7 @@ function Project6() {
           lg={6}
         >
         <a
-          href="https://terra-quake-api.vercel.app/"
+          href="https://www.terraquakeapi.com/"
           target="_blank"
           rel="noopener noreferrer"
           className="link__pages"
@@ -105,7 +105,7 @@ function Project6() {
           <p className="text-white mt-4">
           {t("project6.text-5")} {" "}
             <a
-              href="https://terra-quake-api.vercel.app/"
+              href="https://www.terraquakeapi.com"
               target="_blank"
               rel="noopener noreferrer"
               className="link__pages"

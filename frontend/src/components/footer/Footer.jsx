@@ -18,7 +18,7 @@ function Footer() {
         <Row className="d-flex justify-content-center align-items-top">
           <Col sm={12} md={6} lg={3} className="text-center">
             <Link to="hero" className="logo-link mt-4">
-              <h5>
+              <h5 className="no-copy">
                 Gianluca
                 {" "}<Image src={Logo} alt="Logo" className="logo" />{" "}
                 Chiaravalloti

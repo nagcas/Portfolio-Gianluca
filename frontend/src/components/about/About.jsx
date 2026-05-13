@@ -40,7 +40,7 @@ function About() {
   }, [isLargeScreen]);
   
   return (
-    <Container id="about" className="content__about">
+    <Container id="about" className="content__about no-copy">
       <h2 className="d-flex justify-content-center align-items-center content__title__about">
         {t("about.chi-sono")}
       </h2>

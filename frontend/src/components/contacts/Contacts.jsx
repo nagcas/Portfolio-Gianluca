@@ -120,7 +120,7 @@ function Contacts() {
         return;
       };
 
-      setMessage({ type: "success", text: t("Messaggio inviato correttamente") }); // Mostra un messaggio di successo
+      setMessage({ type: "success", text: t("contacts.messaggio-inviato") }); // Mostra un messaggio di successo
 
       // Reset del modulo dopo il successo
       setTimeout(() => {
@@ -134,7 +134,7 @@ function Contacts() {
       }, 1500);
     } catch (error) {
       console.error("contact:", error.message);
-      setErrors({ email: t("contacts.errore-nell'invio della email") }); // Mostra un errore specifico per l'email
+      setErrors({ email: t("contacts.errore-nell'invio-della-email") }); // Mostra un errore specifico per l'email
     } finally {
       setLoading(false); // Nasconde lo spinner di caricamento
     }
@@ -155,7 +155,7 @@ function Contacts() {
             <p className="fs-4 text-white no-copy">
             {t("contacts.cell")} +39 351 8517108
             </p>
-            <p className="fs-4 text-white">
+            <p className="fs-4 text-white no-copy">
             {t("contacts.email")} <span className="fw-bold no-copy">studio.nagcas@outlook.it</span>
             </p>
           </div>

@@ -10,7 +10,7 @@ Questo repository contiene il codice sorgente per il mio portfolio, suddiviso in
 ## Requisiti
 
 - **Node.js** (versione >= 16.x)
-- **npm** (versione >= 7.x)
+- **pnpm** (versione >= 7.x)
 
 ## Installazione
 

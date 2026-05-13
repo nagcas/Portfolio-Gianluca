@@ -18,11 +18,25 @@
   padding: 10px 30px;
 }
 
+.ssfoto__profilo {
+  width: 400px;
+  aspect-ratio: 1/1;
+  opacity: 0.8;
+  border-radius: 100%;
+}
+
 .foto__profilo {
   width: 300px;
-  aspect-ratio: 1/1;
-  opacity: 0.9;
-  border-radius: 50%;
+  max-width: 100%;
+  height: 300px;
+  object-fit: cover;
+
+  border-radius: 36px;
+  border: 4px solid rgba(255, 255, 255, 0.15);
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .content__foto__profilo {

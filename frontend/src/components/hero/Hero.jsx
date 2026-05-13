@@ -21,12 +21,32 @@ function Hero() {
           <Col className="content__title__hero">
             <h1 className="title__hero">{t("hero.title-hero")}</h1>  
             <h3 className="subtitle__hero">{t("hero.subtitle-hero")}</h3>
-            <div className="icons__group">
-              <Image src={iconReact} alt="Icon React" className="icons" />
-              <Image src={iconHtml} alt="Icon Html5" className="icons" />
-              <Image src={iconCSS} alt="Icon CSS3" className="icons" />
-              <Image src={iconJavascript} alt="Icon Javascript" className="icons" />
-              <Image src={iconPython} alt="Icon Python" className="icons" />
+          
+            <div className="icons__group d-flex justify-content-center">
+              <div className="icon__item">
+                <Image src={iconReact} alt="React" className="icons" />
+                <h3>React</h3>
+              </div>
+
+              <div className="icon__item">
+                <Image src={iconHtml} alt="HTML5" className="icons" />
+                <h3>HTML5</h3>
+              </div>
+
+              <div className="icon__item">
+                <Image src={iconCSS} alt="CSS3" className="icons" />
+                <h3>CSS3</h3>
+              </div>
+
+              <div className="icon__item">
+                <Image src={iconJavascript} alt="JavaScript" className="icons" />
+                <h3>JavaScript</h3>
+              </div>
+
+              <div className="icon__item">
+                <Image src={iconPython} alt="Python" className="icons" />
+                <h3>Python</h3>
+              </div>
             </div>
           </Col>
          

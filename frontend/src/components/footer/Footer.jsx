@@ -30,8 +30,8 @@ function Footer() {
             <Link to="contacts" className="contacts-link mt-4">
               <h5>{t("footer.contatti")}</h5>
             </Link>
-            <p>{t("footer.email")} studio.nagcas@outlook.it</p>
-            <p>{t("footer.telefono")} +39 351 8517108</p>
+            <p className="no-copy">{t("footer.email")} studio.nagcas@outlook.it</p>
+            <p className="no-copy">{t("footer.telefono")} +39 351 8517108</p>
           </Col>
           <Col sm={12} md={6} lg={3} className="text-center">
             <Link to="about" className="about-link mt-4">
@@ -56,6 +56,13 @@ function Footer() {
                 rel="noopener noreferrer"
               >
                 <i className="bi bi-linkedin icons__social"></i>
+              </a>
+              <a
+                href="https://discord.gg/JzfsTmWK"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i class="bi bi-discord icons__social"></i>
               </a>
             </div>
           </Col>

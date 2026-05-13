@@ -189,7 +189,14 @@ function NavBar() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <i className="bi bi-linkedin icons__social"></i>
+                <i className="bi bi-linkedin icons__social me-4"></i>
+              </a>
+              <a
+                href="https://discord.gg/JzfsTmWK"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i class="bi bi-discord icons__social"></i>
               </a>
             </div>
           </Offcanvas.Body>

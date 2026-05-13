@@ -133,7 +133,7 @@ function PrivacyPolicy() {
 
           <section>
             <h2>{t("privacy.section-18")}</h2>
-            <p>
+            <p className="no-copy">
             {t("privacy.section-19")}{" "}
               <a href="mailto:studio.nagcas@outlook.it">studio.nagcas@outlook.it</a>.
             </p>

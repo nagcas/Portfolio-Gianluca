@@ -24,6 +24,9 @@ const app = express()
 // Utilizza cors come middleware globale
 app.use(cors(corsOptions))
 
+// Gestione preflight CORS
+app.options('*', cors(corsOptions))
+
 // Middleware per il parsing del corpo delle richieste JSON
 app.use(express.json())
 
